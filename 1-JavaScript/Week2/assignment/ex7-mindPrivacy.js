@@ -30,10 +30,21 @@ const employeeRecords = [
 ];
 
 // ! Function under test
-function filterPrivateData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
-}
-
+// declare a single parameter the name is employee
+function filterPrivateData(employee) {
+  // create one array that can add object to array
+  let filterEmployee = [];
+  // read length my object
+  for(let i = 0 ; i< employee.length ; i++){
+    // in the length we separate object . what we need 
+    // we divide 3 item one item is gender one item is salary and one item is the rest of the own object but with another name
+     let {gender , salary , ...filteringFinish} =employee[i];
+    //  add the rest of object in my array empty
+     filterEmployee.push(filteringFinish);
+  }
+return filterEmployee;
+  }
+  console.log(filterPrivateData(employeeRecords));
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log('Test 1: filterPrivateData should take one parameters');
