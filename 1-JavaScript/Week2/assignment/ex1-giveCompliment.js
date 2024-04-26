@@ -33,7 +33,7 @@ function giveCompliment(/* TODO parameter(s) go here */name) {
     "Outstanding performance!",
     "Bravo!"
   ];
-    let randomIndex=Math.floor(Math.random()*compliments.length);
+    let randomIndex=Math.floor(Math.random()*compliments.length)
     let randomCompliment=compliments[randomIndex];
   return `hey #{name} you re ${randomCompliment}`;
 }
