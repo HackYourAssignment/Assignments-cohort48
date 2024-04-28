@@ -19,7 +19,7 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/1-Java
    `giveCompliment` function to the console.
 -----------------------------------------------------------------------------*/
 function giveCompliment(name) {
-const compliment=['great','smart','honst','quit','beatufal','alegent']
+const compliment=['great','smart','honest','quiet','beautiful','elegant']
 const randcomp=Math.floor(Math.random() *compliment.length)
 return  `You are ${compliment[randcomp]}, ${name}!, where ${compliment[randcomp]}`
 
