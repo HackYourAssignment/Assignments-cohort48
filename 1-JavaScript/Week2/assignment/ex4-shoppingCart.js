@@ -31,7 +31,7 @@ function addToShoppingCart(/* parameters go here */item) {
       shoppingCart.shift(); // Remove the first item if the number of items exceeds three
     }
   }
-  return `You bought ${shoppingCart.join(', ')} `; //join()method joins all element of the array into a string
+  return `You bought ${shoppingCart.join(', ')}!`; //join()method joins all element of the array into a string
 }
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
