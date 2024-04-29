@@ -16,8 +16,16 @@ it pure. Do the following:
 5. Confirm that you function passes the provided unit tests.
 ------------------------------------------------------------------------------*/
 // ! Function under test
-function addToShoppingCart(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function addToShoppingCart(arr, grocery) {
+  let newCartArr = '';
+  if (arr !== null && grocery !== null) {
+    newCartArr = [...arr];
+    newCartArr.push(grocery);
+    if (arr.length >= 3) {
+      newCartArr.shift();
+    }
+  }
+  return newCartArr;
 }
 
 // ! Test functions (plain vanilla JavaScript)
