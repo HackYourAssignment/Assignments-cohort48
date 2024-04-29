@@ -5,7 +5,7 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-J
 Let's do some grocery shopping! We're going to get some things to cook dinner
 with. However, you like to spend money and always buy too many things. So when 
 you have more than 3 items in your shopping cart the first item gets taken out.
-
+-
 1. Create an array called `shoppingCart` that holds the following strings: 
    "bananas" and "milk".
 
@@ -23,9 +23,19 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 const shoppingCart = ['bananas', 'milk'];
 
 // ! Function to be tested
-function addToShoppingCart(/* parameters go here */) {
+function addToShoppingCart(/* parameters go here */item) {
+  shoppingCart.push(item);
+
   // TODO complete this function
 }
+if (shoppingCart.length > 3) {
+  shoppingCart.shift();
+}
+if (shoppingCart.length > 3) {
+  shoppingCart.shift();
+}
+  return `You bought ${itemList}!`;
+
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
