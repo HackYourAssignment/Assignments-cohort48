@@ -1,0 +1,337 @@
+2024-04-28 03:39:23 info: ----------------------------------------------
+2024-04-28 03:39:23 info: >>> Running Unit Test `ex1-giveCompliment` <<<
+2024-04-28 03:39:23 info: ----------------------------------------------
+2024-04-28 03:39:29 info: All unit tests passed.
+2024-04-28 03:39:38 error: *** Spell Checker Report ***
+
+c:/Users/USER/OneDrive/Masaüstü/HYF-Assignments/Assignments-cohort48/1-JavaScript/Week2/assignment/ex1-giveCompliment.js:41:19 - Unknown word (Ozlem)
+
+2024-04-28 03:39:57 info: Disclaimer turned off
+2024-04-28 03:54:14 info: ----------------------------------------------
+2024-04-28 03:54:14 info: >>> Running Unit Test `ex1-giveCompliment` <<<
+2024-04-28 03:54:14 info: ----------------------------------------------
+2024-04-28 03:54:19 info: All unit tests passed.
+2024-04-28 03:54:27 error: *** Spell Checker Report ***
+
+c:/Users/USER/OneDrive/Masaüstü/HYF-Assignments/Assignments-cohort48/1-JavaScript/Week2/assignment/ex1-giveCompliment.js:41:19 - Unknown word (Ozlem)
+
+2024-04-28 05:33:10 info: ----------------------------------------------
+2024-04-28 05:33:10 info: >>> Running Unit Test `ex1-giveCompliment` <<<
+2024-04-28 05:33:10 info: ----------------------------------------------
+2024-04-28 05:33:15 info: All unit tests passed.
+2024-04-28 05:33:22 info: All steps were completed successfully
+2024-04-28 06:04:12 info: ----------------------------------------------
+2024-04-28 06:04:12 info: >>> Running Unit Test `ex1-giveCompliment` <<<
+2024-04-28 06:04:12 info: ----------------------------------------------
+2024-04-28 06:04:17 info: All unit tests passed.
+2024-04-28 06:04:24 info: All steps were completed successfully
+2024-04-28 06:14:07 info: ----------------------------------------
+2024-04-28 06:14:07 info: >>> Running Unit Test `ex2-dogYears` <<<
+2024-04-28 06:14:07 info: ----------------------------------------
+2024-04-28 06:14:13 info: All unit tests passed.
+2024-04-28 06:14:20 info: All steps were completed successfully
+2024-04-28 07:39:01 info: -------------------------------------------
+2024-04-28 07:39:01 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 07:39:01 info: -------------------------------------------
+2024-04-28 07:39:06 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 08:03:15 info: -------------------------------------------
+2024-04-28 08:03:15 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 08:03:15 info: -------------------------------------------
+2024-04-28 08:03:19 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 08:08:08 info: -------------------------------------------
+2024-04-28 08:08:08 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 08:08:08 info: -------------------------------------------
+2024-04-28 08:08:13 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 09:05:48 info: -------------------------------------------
+2024-04-28 09:05:48 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 09:05:48 info: -------------------------------------------
+2024-04-28 09:05:53 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 10:00:16 info: -------------------------------------------
+2024-04-28 10:00:16 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 10:00:16 info: -------------------------------------------
+2024-04-28 10:00:19 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 10:05:50 info: -------------------------------------------
+2024-04-28 10:05:50 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 10:05:50 info: -------------------------------------------
+2024-04-28 10:05:52 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 10:06:33 info: -------------------------------------------
+2024-04-28 10:06:33 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 10:06:33 info: -------------------------------------------
+2024-04-28 10:06:35 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 10:35:32 info: -------------------------------------------
+2024-04-28 10:35:32 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-28 10:35:32 info: -------------------------------------------
+2024-04-28 10:35:34 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-28 11:54:31 info: --------------------------------------------
+2024-04-28 11:54:31 info: >>> Running Unit Test `ex4-shoppingCart` <<<
+2024-04-28 11:54:31 info: --------------------------------------------
+2024-04-28 11:54:31 warn: A unit test file was not provided.
+2024-04-28 11:54:35 info: All steps were completed successfully
+2024-04-28 11:56:12 info: --------------------------------------------
+2024-04-28 11:56:12 info: >>> Running Unit Test `ex4-shoppingCart` <<<
+2024-04-28 11:56:12 info: --------------------------------------------
+2024-04-28 11:56:12 warn: A unit test file was not provided.
+2024-04-28 11:56:16 info: All steps were completed successfully
+2024-04-29 11:38:58 info: -----------------------------------------
+2024-04-29 11:38:58 info: >>> Running Unit Test `ex6-totalCost` <<<
+2024-04-29 11:38:58 info: -----------------------------------------
+2024-04-29 11:38:58 warn: A unit test file was not provided.
+2024-04-29 11:39:02 error: *** ESLint Report ***
+
+ex6-totalCost.js
+  34:3   warning  Avoid `for in` loops. Prefer `Object.keys()` instead  no-restricted-syntax
+  34:12  warning  'item' is never reassigned. Use 'const' instead       no-autofix/prefer-const
+
+✖ 2 problems (0 errors, 2 warnings)
+
+
+2024-04-29 11:52:25 info: -----------------------------------------
+2024-04-29 11:52:25 info: >>> Running Unit Test `ex6-totalCost` <<<
+2024-04-29 11:52:25 info: -----------------------------------------
+2024-04-29 11:52:25 warn: A unit test file was not provided.
+2024-04-29 11:52:33 info: All steps were completed successfully
+2024-04-29 12:10:36 info: -----------------------------------------
+2024-04-29 12:10:36 info: >>> Running Unit Test `ex6-totalCost` <<<
+2024-04-29 12:10:36 info: -----------------------------------------
+2024-04-29 12:10:36 warn: A unit test file was not provided.
+2024-04-29 12:10:44 info: All steps were completed successfully
+2024-04-29 12:35:11 info: --------------------------------------------
+2024-04-29 12:35:11 info: >>> Running Unit Test `ex4-shoppingCart` <<<
+2024-04-29 12:35:11 info: --------------------------------------------
+2024-04-29 12:35:11 warn: A unit test file was not provided.
+2024-04-29 12:35:18 info: All steps were completed successfully
+2024-04-29 01:36:59 info: --------------------------------------------
+2024-04-29 01:36:59 info: >>> Running Unit Test `ex4-shoppingCart` <<<
+2024-04-29 01:36:59 info: --------------------------------------------
+2024-04-29 01:36:59 warn: A unit test file was not provided.
+2024-04-29 01:37:07 info: All steps were completed successfully
+2024-04-29 01:42:26 info: --------------------------------------------
+2024-04-29 01:42:26 info: >>> Running Unit Test `ex4-shoppingCart` <<<
+2024-04-29 01:42:26 info: --------------------------------------------
+2024-04-29 01:42:26 warn: A unit test file was not provided.
+2024-04-29 01:42:34 info: All steps were completed successfully
+2024-04-29 01:46:25 info: --------------------------------------------
+2024-04-29 01:46:25 info: >>> Running Unit Test `ex4-shoppingCart` <<<
+2024-04-29 01:46:25 info: --------------------------------------------
+2024-04-29 01:46:25 warn: A unit test file was not provided.
+2024-04-29 01:46:33 info: All steps were completed successfully
+2024-04-29 01:55:59 info: -------------------------------------------
+2024-04-29 01:55:59 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 01:55:59 info: -------------------------------------------
+2024-04-29 01:56:04 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-29 02:26:51 info: -------------------------------------------
+2024-04-29 02:26:51 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 02:26:51 info: -------------------------------------------
+2024-04-29 02:26:53 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-29 02:29:18 info: -------------------------------------------
+2024-04-29 02:29:18 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 02:29:18 info: -------------------------------------------
+2024-04-29 02:29:21 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-29 02:30:28 info: -------------------------------------------
+2024-04-29 02:30:28 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 02:30:28 info: -------------------------------------------
+2024-04-29 02:30:30 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-29 02:44:44 info: -------------------------------------------
+2024-04-29 02:44:44 info: >>> Running Unit Test `ex7-mindPrivacy` <<<
+2024-04-29 02:44:44 info: -------------------------------------------
+2024-04-29 02:44:44 warn: A unit test file was not provided.
+2024-04-29 02:44:48 info: All steps were completed successfully
+2024-04-29 03:15:52 info: ------------------------------------------------
+2024-04-29 03:15:52 info: >>> Running Unit Test `ex5-shoppingCartPure` <<<
+2024-04-29 03:15:52 info: ------------------------------------------------
+2024-04-29 03:15:52 warn: A unit test file was not provided.
+2024-04-29 03:15:55 info: All steps were completed successfully
+2024-04-29 03:23:42 info: -------------------------------------------
+2024-04-29 03:23:42 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 03:23:42 info: -------------------------------------------
+2024-04-29 03:23:45 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+2024-04-29 03:32:21 info: -------------------------------------------
+2024-04-29 03:32:21 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 03:32:21 info: -------------------------------------------
+2024-04-29 03:32:25 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+2024-04-29 03:39:39 info: -------------------------------------------
+2024-04-29 03:39:39 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 03:39:39 info: -------------------------------------------
+2024-04-29 03:39:41 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Tom with 1 kids.
+  Received: You will be a doctor in Amsterdam, married to Tom with 1 kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+2024-04-29 04:40:06 info: -------------------------------------------
+2024-04-29 04:40:06 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 04:40:06 info: -------------------------------------------
+2024-04-29 04:40:08 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Alice with one kids.
+  Received: You will be a doctor in Amsterdam, married to Alice with one kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+2024-04-29 05:14:10 info: -------------------------------------------
+2024-04-29 05:14:10 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 05:14:10 info: -------------------------------------------
+2024-04-29 05:14:13 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Alice with one kids.
+  Received:  You will be a doctor in Amsterdam, married to Alice with one  kids. 
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+2024-04-29 05:30:51 info: -------------------------------------------
+2024-04-29 05:30:51 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 05:30:51 info: -------------------------------------------
+2024-04-29 05:30:53 error: *** Unit Test Error Report ***
+
+✕ tellFortune should tell the fortune by randomly selecting array values
+  Expected: You will be a doctor in Amsterdam, married to Alice with one kids.
+  Received: You will be a doctor in Amsterdam, married to Alice with one kids!
+
+
+Command failed: npx jest ex3-tellFortune.test.js --colors --reporters="C:\Users\USER\OneDrive\Masaüstü\HYF-Assignments\Assignments-cohort48\test-runner\CustomReporter.js"
+2024-04-29 05:33:03 info: -------------------------------------------
+2024-04-29 05:33:03 info: >>> Running Unit Test `ex3-tellFortune` <<<
+2024-04-29 05:33:03 info: -------------------------------------------
+2024-04-29 05:33:05 info: All unit tests passed.
+2024-04-29 05:33:09 info: All steps were completed successfully
