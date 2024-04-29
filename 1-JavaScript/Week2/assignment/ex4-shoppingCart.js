@@ -1,4 +1,5 @@
 'use strict';
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week3#exercise-4-shopping-at-the-supermarket
 
@@ -26,16 +27,15 @@ const shoppingCart = ['bananas', 'milk'];
 function addToShoppingCart(/* parameters go here */item) {
   shoppingCart.push(item);
 
-  // TODO complete this function
-}
-if (shoppingCart.length > 3) {
-  shoppingCart.shift();
-}
-if (shoppingCart.length > 3) {
-  shoppingCart.shift();
-}
-  return `You bought ${itemList}!`;
+  // Check if the cart length exceeds 3, remove the first item if true
+  if (shoppingCart.length > 3) {
+    shoppingCart.shift();
+  }
 
+  // Join the items in the shopping cart with a comma and return the message
+  const itemList = shoppingCart.join(', ');
+  return `You bought ${itemList}!`;
+}
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
@@ -43,7 +43,7 @@ function test1() {
     'Test 1: addShoppingCart() called without an argument should leave the shopping cart unchanged'
   );
   const expected = 'You bought bananas, milk!';
-  const actual = addToShoppingCart();
+  const actual = addToShoppingCart(shoppingCart);
   console.assert(actual === expected);
 }
 
