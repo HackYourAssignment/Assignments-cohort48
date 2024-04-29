@@ -1,4 +1,7 @@
 'use strict';
+
+const { chain } = require("lodash");
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week3#exercise-6-total-cost-is
 
@@ -22,10 +25,18 @@ instead!
 -----------------------------------------------------------------------------*/
 const cartForParty = {
   // TODO complete this object
+  beers: 1.75,
+  chips: 0.99,
+  soda: 2.5,
+  pizza: 8.99,
+  cake: 12.49
 };
 
-function calculateTotalPrice(/* TODO parameter(s) go here */) {
+function calculateTotalPrice(/* TODO parameter(s) go here */cart) {
   // TODO replace this comment with your code
+  let totalPrice=Object.values(cart).reduce( (accumulate,current)=>accumulate+current,0)
+
+return `Total: €${totalPrice.toFixed(2)}`; // Return the total price as a string
 }
 
 // ! Test functions (plain vanilla JavaScript)
