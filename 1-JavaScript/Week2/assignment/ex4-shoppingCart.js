@@ -1,4 +1,4 @@
-'use strict';
+"use strict";
 
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week3#exercise-4-shopping-at-the-supermarket
@@ -21,57 +21,53 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 
 3. Confirm that your code passes the unit tests.
 -----------------------------------------------------------------------------*/
-const shoppingCart = ['bananas', 'milk'];
+const shoppingCart = ["bananas", "milk"];
 
-// ! Function to be tested
-function addToShoppingCart(/* parameters go here */item) {
-  shoppingCart.push(item);
-
-  // Check if the cart length exceeds 3, remove the first item if true
-  if (shoppingCart.length > 3) {
-    shoppingCart.shift();
+function addToShoppingCart(item) {
+  if (item!==undefined) {
+    shoppingCart.push(item)
+    if (shoppingCart.length>3) {
+      shoppingCart.shift()
+    }
   }
 
-  // Join the items in the shopping cart with a comma and return the message
-  const itemList = shoppingCart.join(', ');
-  return `You bought ${itemList}!`;
+  return `You bought ${shoppingCart.join(", ")}!`;
 }
 
-// ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log(
-    'Test 1: addShoppingCart() called without an argument should leave the shopping cart unchanged'
+    "Test 1: addShoppingCart() called without an argument should leave the shopping cart unchanged"
   );
-  const expected = 'You bought bananas, milk!';
-  const actual = addToShoppingCart(shoppingCart);
+  const expected = "You bought bananas, milk!"; // No change is expected
+  const actual = addToShoppingCart();
   console.assert(actual === expected);
 }
 
 function test2() {
-  console.log('Test 2: addShoppingCart() should take one parameter');
+  console.log("Test 2: addShoppingCart() should take one parameter");
   const expected = 1;
   const actual = addToShoppingCart.length;
   console.assert(actual === expected);
 }
 
 function test3() {
-  console.log('Test 3: `chocolate` should be added');
-  const expected = 'You bought bananas, milk, chocolate!';
-  const actual = addToShoppingCart('chocolate');
+  console.log("Test 3: `chocolate` should be added");
+  const expected = "You bought bananas, milk, chocolate!";
+  const actual = addToShoppingCart("chocolate");
   console.assert(actual === expected);
 }
 
 function test4() {
-  console.log('Test 4: `waffles` should be added and `bananas` removed');
-  const expected = 'You bought milk, chocolate, waffles!';
-  const actual = addToShoppingCart('waffles');
+  console.log("Test 4: `waffles` should be added and `bananas` removed");
+  const expected = "You bought milk, chocolate, waffles!";
+  const actual = addToShoppingCart("waffles");
   console.assert(actual === expected);
 }
 
 function test5() {
-  console.log('Test 5: `tea` should be added and `milk` removed');
-  const expected = 'You bought chocolate, waffles, tea!';
-  const actual = addToShoppingCart('tea');
+  console.log("Test 5: `tea` should be added and `milk` removed");
+  const expected = "You bought chocolate, waffles, tea!";
+  const actual = addToShoppingCart("tea");
   console.assert(actual === expected);
 }
 

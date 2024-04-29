@@ -1,24 +1,31 @@
+'use strict';
+
+
 const cartForParty = {
-  beer: 3.59,
-  wijn: 2.34
+  // TODO complete this object
+  beers: 1.65,
+  chips: 1.04,
+  water: 12.5,
+  ayran: 8.99,
+  raki: 12.49
 };
 
-function calculateTotalPrice(numbers) {
-  const total = Object.values(numbers).reduce((accumulator, currentValue) => accumulator + currentValue, 0);
-  return `Total: €${total}`;
+function calculateTotalPrice(/* TODO parameter(s) go here */cart) {
+  // TODO replace this comment with your code
+  let totalPrice=Object.values(cart).reduce( (accumulate,current)=>accumulate+current,0)
+
+return `Total: €${totalPrice.toFixed(2)}`; // Return the total price as a string
 }
 
+// ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log('\nTest 1: calculateTotalPrice should take one parameter');
-  const parameterCount = calculateTotalPrice.length;
-  console.assert(parameterCount === 1, `Expected 1 parameter, but received ${parameterCount}`);
+  // TODO replace this comment with your code
 }
 
 function test2() {
   console.log('\nTest 2: return correct output when passed cartForParty');
-  const expected = 'Total: €5.93';
-  const actual = calculateTotalPrice(cartForParty);
-  console.assert(actual === expected, `Expected "${expected}", but received "${actual}"`);
+  // TODO replace this comment with your code
 }
 
 function test() {
