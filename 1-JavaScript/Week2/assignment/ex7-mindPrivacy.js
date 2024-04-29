@@ -30,14 +30,32 @@ const employeeRecords = [
 ];
 
 // ! Function under test
-function filterPrivateData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+// ! Function under test
+function filterPrivateData(arr) {
+  // Create a new array to store the filtered employee records
+  const filteredRecords = [];
+
+  // Iterate over each employee record in the input array
+  for (const record of arr) {
+    // Destructure the record object to extract non-private properties
+    const { name, occupation, email } = record;
+
+    // Create a new employee record with the non-private properties
+    const filteredRecord = { name, occupation, email };
+
+    // Push the filtered record to the new array
+    filteredRecords.push(filteredRecord);
+  }
+
+  // Return the new array containing employee data without private data
+  return filteredRecords;
 }
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log('Test 1: filterPrivateData should take one parameters');
   console.assert(filterPrivateData.length === 1);
+  
 }
 
 function test2() {
