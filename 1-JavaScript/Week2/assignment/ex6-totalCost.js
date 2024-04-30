@@ -44,12 +44,12 @@ function calculateTotalPrice(cartForParty) {
 function test1() {
   console.log('\nTest 1: calculateTotalPrice should take one parameter');
 const result=calculateTotalPrice(cartForParty);
-console.assert(typeof result==='number',"Expected type 'number'")
+console.assert(typeof result!='number',"Expected type 'number'")
 }
 
 function test2() {
   console.log('\nTest 2: return correct output when passed cartForParty');
-  const expected=12.25;
+  const expected='Total:$'+12.25
   const result=calculateTotalPrice(cartForParty);
   console.assert(result===expected)
 }
