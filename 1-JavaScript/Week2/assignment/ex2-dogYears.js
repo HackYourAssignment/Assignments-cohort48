@@ -20,6 +20,7 @@ ok
 //   // TODO complete this function
 //   return num*7
 // }
+
 const calculateDogAge=(num)=> num*7
 
 function main() {
