@@ -1,6 +1,6 @@
 'use strict';
 
-
+// ex6
 const cartForParty = {
   // TODO complete this object
   beers: 1.65,
