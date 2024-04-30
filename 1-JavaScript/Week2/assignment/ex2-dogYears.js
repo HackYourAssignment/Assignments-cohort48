@@ -4,7 +4,7 @@ Full description at: https://github.com/HackYourFuture/Assignment/tree/main/1-Ja
 
 You know how old your dog is in human years, but what about dog years? Let's
 calculate it!
-
+ok
 1. Complete the function named `calculateDogAge`.
 
   - It takes one parameter: your (fictional) puppy's age (number).

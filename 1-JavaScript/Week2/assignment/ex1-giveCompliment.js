@@ -2,7 +2,7 @@
 /* -----------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Homework/tree/main/1-JavaScript/Week3#exercise-1-you-are-amazing
 
-1. Complete the function named `giveCompliment`as follows:
+1. Complete the fmunction named `giveCompliment`as follows:
 
    - It should take a single parameter: `name`.
    - Its function body should include a variable that holds an array,
