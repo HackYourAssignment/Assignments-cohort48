@@ -19,7 +19,7 @@ it pure. Do the following:
 function addToShoppingCart([...shoppingCart],grocery) {
   shoppingCart.push(grocery);
   const newshoppingcart=shoppingCart;
-  if(newshoppingcart>3){
+  if(newshoppingcart.length>3){
     newshoppingcart.shift()
   }
   return newshoppingcart;
