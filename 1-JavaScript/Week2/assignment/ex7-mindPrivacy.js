@@ -35,7 +35,7 @@ return employeeRecords.map(e=>{
   return{
     name:e.name,
     occupation:e.occupation,
-    location:e.location
+    email:e.email
   }
 })
 }
