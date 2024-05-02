@@ -43,8 +43,6 @@ console.log(sanitizeFruitBasket(fruitBasket, 'lemon'));
 
 
 
-
-
 // ! Unit tests (using Jest)
 describe('sanitizeFruitBasket', () => {
   test('should take two parameters', () => {
