@@ -31,9 +31,17 @@ const mondayTasks = [
 
 const hourlyRate = 25;
 
-function computeEarnings(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+
+
+function computeEarnings(task , hourlyRate) {
+  // the time duration should first change to hour (... / 60), and multiply to hourly time 
+  let calculateHourly = task.map(t => (t.duration / 60) * hourlyRate).reduce((a , b) => a + b);
+  // to fixe the means my number is two separate item (addad ashari)
+  return `€${calculateHourly.toFixed(2)}`;
 }
+console.log(computeEarnings(mondayTasks, hourlyRate));
+
+
 
 // ! Unit tests (using Jest)
 describe('computeEarnings', () => {
