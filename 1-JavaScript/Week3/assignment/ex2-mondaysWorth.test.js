@@ -34,9 +34,9 @@ const hourlyRate = 25;
 
 
 function computeEarnings(task , hourlyRate) {
-  // the time duration should first change to hour (... / 60), and multiply to hourly time 
-  let calculateHourly = task.map(t => (t.duration / 60) * hourlyRate).reduce((a , b) => a + b);
-  // to fixe the means my number is two separate item (addad ashari)
+  //==========>>>>>>>>>> the time duration should first change to hour (... / 60), and multiply to hourly time 
+  const calculateHourly = task.map(t => (t.duration / 60) * hourlyRate).reduce((a , b) => a + b);
+  //==========>>>>>>>>>> to fixe the means my number is two separate item (addad ashari)
   return `€${calculateHourly.toFixed(2)}`;
 }
 console.log(computeEarnings(mondayTasks, hourlyRate));

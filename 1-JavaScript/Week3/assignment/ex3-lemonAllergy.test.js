@@ -27,9 +27,9 @@ const fruitBasket = [
 
 // ! Function under test
 function sanitizeFruitBasket(basket ,unwantedFruit) {
-  // way 1 get the write with arrow function
+  //==========>>>>>>>>>> way 1 get the write with arrow function
   return basket.filter(f => f !== unwantedFruit);
-  // way 2 get write with for loop
+  //==========>>>>>>>>>> way 2 get write with for loop
 let bax =[];
 for(let i = 0 ; i < basket.length ; i++){
   if(basket[i] !== unwantedFruit){

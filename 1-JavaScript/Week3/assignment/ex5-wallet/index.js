@@ -23,11 +23,16 @@ function createWallet(name, cash = 0) {
   }
 
   function transferInto(wallet, amount) {
+    // console.log(
+    //   `Transferring ${eurosFormatter.format(amount)} from ${name} to ${
+    //     wallet.name
+    //   }`
+    // );
+    // ==========================>>>>>>>>> **** if we change this line we don't get the undefined **** <<<<<<<<<<<<<==================================
     console.log(
-      `Transferring ${eurosFormatter.format(amount)} from ${name} to ${
-        wallet.name
-      }`
+      `Transferring ${eurosFormatter.format(amount)} from ${getName()} to ${wallet.getName()}`
     );
+
     const withdrawnAmount = withdraw(amount);
     wallet.deposit(withdrawnAmount);
   }
@@ -60,7 +65,6 @@ walletJane.transferInto(walletJoe, 25);
 walletJack.reportBalance();
 walletJoe.reportBalance();
 walletJane.reportBalance();
-
 // * End of exercise code
 
 /*******************************************************************************
@@ -77,7 +81,7 @@ const quiz = {
       b: 'cash, name', 
       c: 'amount, this, wallet'
     },
-    answer: undefined,
+    answer: 'b', // because show cash and name in the createWallet() 
   },
   q2: {
     question: 'What is in the Call Stack, from top to bottom?',
@@ -86,7 +90,7 @@ const quiz = {
       b: 'anonymous, transferInto', 
       c: 'transferInto, anonymous' 
     },
-    answer: undefined,
+    answer: 'a',// because that shows which functions are first running and sorting 
   },
   q3: {
     question: 'What tooltip appears when hovering over the third debug button?',
@@ -95,7 +99,7 @@ const quiz = {
       b: 'Step out of current function', 
       c: 'Step' 
     },
-    answer: undefined,
+    answer: 'a',
   },
   q4: {
     question: 'What is displayed in the console?',
@@ -104,7 +108,7 @@ const quiz = {
       b: 'Transferring € 50,00 from Jack to undefined', 
       c: 'Transferring € 50,00 from Jack to Jane' 
     },
-    answer: undefined,
+    answer: 'a',// line 54  walletJack.transferInto(walletJoe, 50);
   },
   q5: {
     question: 'The owner of the wallet with insufficient funds is:',
@@ -113,6 +117,6 @@ const quiz = {
       b: 'Joe', 
       c: 'Jane' 
     },
-    answer: undefined,
+    answer: 'c',// because jane try to more money sending but not enough money dus jane is not enough money
   },
 };

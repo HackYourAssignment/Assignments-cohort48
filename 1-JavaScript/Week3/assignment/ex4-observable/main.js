@@ -18,6 +18,7 @@ observable.subscribe(console.log);
 observable.subscribe(consoleUpperCase);
 observable.subscribe(consoleLowerCase);
 
+
 // Send a message to all current subscribers
 observable.notify("Let's see what happens here!");
 // Let's see what happens here! (console.log subscriber)

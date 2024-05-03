@@ -1,5 +1,6 @@
 const createObservable = require('./ex4-observable');
 
+
 describe('createObservable', () => {
   test('should exist and be a function', () => {
     expect(typeof createObservable).toBe('function');

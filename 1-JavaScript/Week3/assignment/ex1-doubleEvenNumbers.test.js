@@ -22,8 +22,8 @@ function doubleEvenNumbers(numbers) {
 }
 
   // TODO rewrite the function body using `map` and `filter`.
-// get the write arrow function
-let doubleEvenNumber = (numbers) =>
+//==============>>>>>. get the write arrow function
+const doubleEvenNumber = (numbers) =>
   numbers.map((n) => n * 2).filter((num) => num % 2 === 0);
 
   const myNumber = [1, 2, 3, 4];
