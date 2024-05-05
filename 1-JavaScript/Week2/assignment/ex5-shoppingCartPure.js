@@ -13,20 +13,22 @@ it pure. Do the following:
 3. The shopping cart passed as an argument should not be mutated.
 4. When constructing the new shopping cart array you should make use of the ES6 
    spread syntax.
-5. Confirm that you function passes the provided unit tests.
+5. Confirm that you function passes the provided unit
+.tests.
 ------------------------------------------------------------------------------*/
 // ! Function under test
-function addToShoppingCart(/* TODO parameter(s) go here */cart,item) {
-
-
-let newCart=[...cart];
-newCart.push(item)
-  if(newCart.length>3){
-    newCart.shift()
+function addToShoppingCart(/* TODO parameter(s) go here */ cart, item) {
+  const newCart = [...cart];
+  newCart.push(item);
+  if (newCart.length > 3) {
+    newCart.shift();
   }
- return newCart;
-  // TODO complete this function
+  return newCart;
 }
+const shoppingCart = ['bananas', 'milk'];
+console.log(1111);
+console.log(addToShoppingCart(shoppingCart, 'lemon'));
+console.log(addToShoppingCart(shoppingCart, 'pineapple'));
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {

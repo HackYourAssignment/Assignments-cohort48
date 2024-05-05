@@ -1,7 +1,5 @@
 'use strict';
 
-const { chain } = require("lodash");
-
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week3#exercise-6-total-cost-is
 
@@ -24,30 +22,37 @@ instead!
 3. Complete the unit test functions and verify that all is working as expected.
 -----------------------------------------------------------------------------*/
 const cartForParty = {
-  // TODO complete this object
   beers: 1.75,
   chips: 0.99,
   soda: 2.5,
   pizza: 8.99,
-  cake: 12.49
+  cake: 12.49,
 };
 
-function calculateTotalPrice(/* TODO parameter(s) go here */cart) {
-  // TODO replace this comment with your code
-  let totalPrice=Object.values(cart).reduce( (accumulate,current)=>accumulate+current,0)
+function calculateTotalPrice(/* TODO parameter(s) go here */ cart) {
+  const totalPrice = Object.values(cart).reduce(
+    (accumulate, current) => accumulate + current,
+    0
+  );
 
-return `Total: €${totalPrice.toFixed(2)}`; // Return the total price as a string
+  return `Total: €${totalPrice.toFixed(2)}`; // Return the total price as a string
 }
 
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log('\nTest 1: calculateTotalPrice should take one parameter');
-  // TODO replace this comment with your code
+
+  const expectedNumOfParameter = 1;
+  const actualNumberOfParameter = calculateTotalPrice.length;
+  console.assert(expectedNumOfParameter === actualNumberOfParameter);
 }
 
 function test2() {
   console.log('\nTest 2: return correct output when passed cartForParty');
-  // TODO replace this comment with your code
+
+  const expected = 'Total: €9.84';
+  const actual = calculateTotalPrice(cartForParty);
+  console.assert(expected === actual);
 }
 
 function test() {
