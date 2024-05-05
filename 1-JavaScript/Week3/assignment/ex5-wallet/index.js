@@ -21,7 +21,6 @@ function createWallet(name, cash = 0) {
     cash -= amount;
     return amount;
   }
-
   function transferInto(wallet, amount) {
     console.log(
       `Transferring ${eurosFormatter.format(amount)} from ${name} to ${
@@ -46,7 +45,6 @@ function createWallet(name, cash = 0) {
     getName,
   };
 }
-
 const walletJack = createWallet('Jack', 100);
 const walletJoe = createWallet('Joe', 10);
 const walletJane = createWallet('Jane', 20);
