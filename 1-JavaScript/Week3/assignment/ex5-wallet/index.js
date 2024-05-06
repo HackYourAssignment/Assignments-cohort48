@@ -86,7 +86,7 @@ const quiz = {
       b: 'anonymous, transferInto', 
       c: 'transferInto, anonymous' 
     },
-    answer: "b",
+    answer: "c",
   },
   q3: {
     question: 'What tooltip appears when hovering over the third debug button?',
@@ -95,7 +95,7 @@ const quiz = {
       b: 'Step out of current function', 
       c: 'Step' 
     },
-    answer: "c",
+    answer: undefined,
   },
   q4: {
     question: 'What is displayed in the console?',
@@ -113,6 +113,6 @@ const quiz = {
       b: 'Joe', 
       c: 'Jane' 
     },
-    answer: "b",
+    answer: "c",
   },
 };
