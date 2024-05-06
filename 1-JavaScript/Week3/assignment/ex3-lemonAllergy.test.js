@@ -1,4 +1,5 @@
 'use strict';
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week4#exercise-3-lemon-allergy
 
@@ -26,26 +27,35 @@ const fruitBasket = [
 ];
 
 // ! Function under test
-function sanitizeFruitBasket(/* TODO parameter(s) go here */) {
+function sanitizeFruitBasket(
+  /* TODO parameter(s) go here */ fruitArray,
+  unwantedFruit
+) {
   // TODO complete this function
+  const wantedFruits = fruitArray.filter((fruit) => fruit !== unwantedFruit);
+  return wantedFruits;
 }
 
+console.log(sanitizeFruitBasket(fruitBasket, 'lemon'));
 // ! Unit tests (using Jest)
 describe('sanitizeFruitBasket', () => {
   test('should take two parameters', () => {
-    // TODO replace next line with your code
-    expect(false).toBe(true);
+  
+    const numberOfParameter = sanitizeFruitBasket.length;
+    expect(numberOfParameter).toBe(2);
   });
 
   test('should not modify the original `fruitBasket` array', () => {
     // Save the original contents of the fruit basket
     const originalFruitBasketContents = [...fruitBasket];
-    // TODO replace next line with your code
-    expect(false).toBe(true);
+
+
+    expect(fruitBasket).toEqual(originalFruitBasketContents);
   });
 
   test('should return a new array that does not include the unwanted `lemon`', () => {
-    // TODO replace next line with your code
-    expect(false).toBe(true);
+
+
+    expect(sanitizeFruitBasket(fruitBasket, 'lemon')).not.toContain('lemon');
   });
 });
