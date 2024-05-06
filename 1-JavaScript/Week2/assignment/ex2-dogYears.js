@@ -4,7 +4,7 @@ Full description at: https://github.com/HackYourFuture/Assignment/tree/main/1-Ja
 
 You know how old your dog is in human years, but what about dog years? Let's
 calculate it!
-ok
+- ok
 1. Complete the function named `calculateDogAge`.
 
   - It takes one parameter: your (fictional) puppy's age (number).
@@ -24,9 +24,9 @@ ok
 const calculateDogAge=(num)=> num*7
 
 function main() {
-  console.log(calculateDogAge(1)); // -> "Your doggie is 7 years old in dog years!"
-  console.log(calculateDogAge(2)); // -> "Your doggie is 14 years old in dog years!"
-  console.log(calculateDogAge(3)); // -> "Your doggie is 21 years old in dog years!"
+  console.log(`Your doggie is ${calculateDogAge(1)} years old in dog years!`); // -> "Your doggie is 7 years old in dog years!"
+  console.log(`Your doggie is ${calculateDogAge(2)} years old in dog years!`); // -> "Your doggie is 7 years old in dog years!"
+  console.log(`Your doggie is ${calculateDogAge(3)} years old in dog years!`); // -> "Your doggie is 7 years old in dog years!"
 }
 
 // ! Do not change or remove the code below

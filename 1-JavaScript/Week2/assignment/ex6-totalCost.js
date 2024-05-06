@@ -12,7 +12,7 @@ function calculateTotalPrice(prices) {
   if (prices.length === 0) {
     return `Total: €0`;
   }
-  const totalPrice = Object.values(prices).reduce((sum, price) => sum + price);
+  const totalPrice = Object.values(prices).reduce((sum, price) => sum + price,[]);
 
   return `Total: €${totalPrice}`;
 }
