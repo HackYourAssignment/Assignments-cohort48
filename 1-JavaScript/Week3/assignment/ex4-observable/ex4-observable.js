@@ -19,10 +19,8 @@ function createObservable() {
       subscribers.push(subscriber)
     },
     notify: function (message) {
+      subscribers.forEach((x) => x(message))
 
-      const greets = subscribers.forEach((x) => x(message))
-
-      // subscribers.length++
     },
   };
 }
