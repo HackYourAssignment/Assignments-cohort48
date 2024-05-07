@@ -40,7 +40,7 @@ body, this code is now written once only in a separated function.
 
 function selectRandomly(array) {
   // calculate random with each index in array in the main variable
-  let randomly =Math.round(Math.random() * array.length);
+  let randomly =Math.floor(Math.random() * array.length);
   return array[randomly]
 }
 //  take 4 argument

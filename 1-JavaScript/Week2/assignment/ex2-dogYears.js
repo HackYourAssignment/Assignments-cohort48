@@ -15,12 +15,9 @@ calculate it!
 2. Use `console.log` to display the result of the function for three different
    ages.
 -----------------------------------------------------------------------------*/
-// initialize parameter name , i wrote human age because we want to calculate human age to dao age
 function calculateDogAge(humanAge) {
-  // declare one variable dog ge because we need calculate age
-  // and if one dog have 1 years the means one human is 7 years old 
-    let dogYears = humanAge * 7 ;
-    return `Your doggie is ${dogYears}  years old in dog years ${humanAge} !`;
+    const dogYears = humanAge * 7 ;
+    return `Your doggie is ${dogYears}  years old in dog years!`; 
  
 }
 

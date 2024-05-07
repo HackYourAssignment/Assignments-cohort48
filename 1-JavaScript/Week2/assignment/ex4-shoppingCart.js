@@ -23,15 +23,12 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 const shoppingCart = ['bananas', 'milk'];
 
 // ! Function to be tested
-//  create o array .  i create in function name is item this array will connect too shopping cart array
 function addToShoppingCart(item) {
   if(item){
-    // method .push()  is add the item to shopping cart
     shoppingCart.push(item);
   } if (shoppingCart.length > 3 ){
-    //method .shift() remove first element in the array in the shopping cart
     shoppingCart.shift();
-    // method .join() return string 
+
   } 
   return `You bought ${shoppingCart.join(', ')}!`;
 }

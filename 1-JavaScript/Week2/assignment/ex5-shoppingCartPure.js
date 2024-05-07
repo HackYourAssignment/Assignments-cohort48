@@ -16,15 +16,10 @@ it pure. Do the following:
 5. Confirm that you function passes the provided unit tests.
 ------------------------------------------------------------------------------*/
 // ! Function under test
-// declare 2 parameter one is cart and two is item
-// cart is array
-// item is one parameter
+
 function addToShoppingCart(cart , item) {
-  // create one new shopping and declare 2 things one is called one array and the name array is cart 
-  // and when we called the array should use 3 dot ... 
-  // two is declare one parameter the name is item
+
   let newShopping = [...cart , item];
-  // if my new cart shopping is more than 3 remove one item because the array should be 3 length
   if(newShopping.length > 3 ){
    newShopping= newShopping.slice(1);
   }
