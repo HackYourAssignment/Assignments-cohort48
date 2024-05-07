@@ -15,9 +15,10 @@ calculate it!
 2. Use `console.log` to display the result of the function for three different
    ages.
 -----------------------------------------------------------------------------*/
-
-function calculateDogAge(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function calculateDogAge(humanAge) {
+    const dogYears = humanAge * 7 ;
+    return `Your doggie is ${dogYears}  years old in dog years!`; 
+ 
 }
 
 function main() {
