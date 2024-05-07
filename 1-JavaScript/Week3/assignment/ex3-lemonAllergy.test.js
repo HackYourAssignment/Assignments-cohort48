@@ -16,7 +16,7 @@ Complete the function called `sanitizeFruitBasket`:
 - Return a new array that contains the fruits without any lemons.
 ------------------------------------------------------------------------------*/
 const fruitBasket = [
-  'apple',
+  'apple', 
   'lemon',
   'grapefruit',
   'lemon',
@@ -26,8 +26,8 @@ const fruitBasket = [
 ];
 
 // ! Function under test
-function sanitizeFruitBasket(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function sanitizeFruitBasket(originalBasket,fruit) {
+return originalBasket.filter(e=>e!=fruit)
 }
 
 // ! Unit tests (using Jest)
