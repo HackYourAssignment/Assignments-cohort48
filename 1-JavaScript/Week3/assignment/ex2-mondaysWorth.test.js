@@ -31,16 +31,19 @@ const mondayTasks = [
 
 const hourlyRate = 25;
 
-function computeEarnings(array,hourcost) {
-  if(!Array.isArray(array)){
-    return 'invalid array'
+function computeEarnings(array, hourcost) {
+  if (!Array.isArray(array)) {
+    return 'invalid array';
   }
-  const invalidArray=array.every(e=>typeof e.duration==='number' && !isNaN(e.duration))
-  if(!invalidArray){
-    return 'invalid data'
+  const invalidArray = array.every(
+    (e) => typeof e.duration === 'number' && !isNaN(e.duration)
+  );
+  if (!invalidArray) {
+    return 'invalid data';
   }
-  const allCostes=array.map(e=>e.duration).reduce((e,a)=>e+a)/60*hourcost;
-  return `€${allCostes.toFixed(2)}`
+  const allCostes =
+    (array.map((e) => e.duration).reduce((e, a) => e + a) / 60) * hourcost;
+  return `€${allCostes.toFixed(2)}`;
 }
 
 // ! Unit tests (using Jest)
