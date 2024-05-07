@@ -21,13 +21,14 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/1-Java
 // initialize parameter name
 function giveCompliment(name) {
   // create one array with 10 index string
-  let compliments = ["greet","awesome","amazing","fantastic","magical","super","best","grateful","good","very good"];
+  const compliments = ["greet","awesome","amazing","fantastic","magical","super","best","grateful","good","very good"];//;==========>>>>>>>>>> changed let to => const
   // define variable randomly of compliments of array
-  let randomly = compliments[Math.round(Math.random() * compliments.length)];
-  return `You are ${randomly} , ${name} !`;
+  const randomCompliment = compliments[Math.floor(Math.random() * compliments.length)];// ==========>>>>>>>>>>   changed Math.round to => floor 
+  //  ==========>>>>>>>>>> changed let to => const ==========>>>>>>>>>> changed name randomly to randomCompliment 
+  return `You are ${randomCompliment} , ${name} !`;
 }
 // called the function to run
-giveCompliment();
+giveCompliment(this.name);// ==========>>>>>>>>>>  add this keyword inside the call function this.name
 
 function main() {
   // TODO substitute your own name for "HackYourFuture"

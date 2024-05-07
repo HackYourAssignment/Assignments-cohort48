@@ -19,8 +19,8 @@ calculate it!
 function calculateDogAge(humanAge) {
   // declare one variable dog ge because we need calculate age
   // and if one dog have 1 years the means one human is 7 years old 
-    let dogYears = humanAge * 7 ;
-    return `Your doggie is ${dogYears}  years old in dog years ${humanAge} !`;
+    const dogYears = humanAge * 7 ; // ==========>>>>>>>>>> changed let to const
+    return `Your doggie is ${dogYears}  years old in dog years!`; // ==========>>>>>>>>>> remove ${humanAge}
  
 }
 

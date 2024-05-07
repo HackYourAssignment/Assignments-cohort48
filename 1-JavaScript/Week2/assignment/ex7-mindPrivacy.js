@@ -38,7 +38,7 @@ function filterPrivateData(employee) {
   for(let i = 0 ; i< employee.length ; i++){
     // in the length we separate object . what we need 
     // we divide 3 item one item is gender one item is salary and one item is the rest of the own object but with another name
-     let {gender , salary , ...filteringFinish} =employee[i];
+     const {gender , salary , ...filteringFinish} =employee[i];//  ==========>>>>>>>>>> i changed let => to => const
     //  add the rest of object in my array empty
      filterEmployee.push(filteringFinish);
   }

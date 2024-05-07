@@ -33,7 +33,7 @@ iceCream :4.90
 // give a every object variable and calculate together
 function calculateTotalPrice(obj) {
   let sum =Object.values(obj).reduce((num1 , num2)=> num1 + num2);
-return `sum : ${sum} euro`;
+return `sum : ${sum.toFixed(2)} euro`;// ==========>>>>>>>>>> i changed sum to sum.toFixed but should change in the test 2 because i get the 20.00 output
 }
 console.log(calculateTotalPrice(cartForParty));
 
@@ -45,9 +45,9 @@ function test1() {
 
 function test2() {
   console.log('\nTest 2: return correct output when passed cartForParty');
-  const expected="sum : 20 euro";
+  const expected="sum : 20.00 euro";
   const actual=calculateTotalPrice(cartForParty);
-  console.assert(actual === expected);}
+  console.assert(actual === expected );}
 
 function test() {
   test1();
