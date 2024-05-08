@@ -20,7 +20,7 @@ function addToShoppingCart(cart, item) {
   const newCart = [...cart, item];
 
   if (newCart.length > 3) {
-    return newCart.slice(1);
+    return newCart.slice(-3);
   }
 
   return newCart;
