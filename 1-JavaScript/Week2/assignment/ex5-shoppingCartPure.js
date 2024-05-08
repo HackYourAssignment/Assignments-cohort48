@@ -18,7 +18,7 @@ it pure. Do the following:
 function addToShoppingCart(shoppingCart, item) {
   const newShoppingCart = [...shoppingCart, item];
   if (newShoppingCart.length > 3) {
-    newShoppingCart.shift();
+    newShoppingCart.splice(0,newShoppingCart.length-3);
   }
   return newShoppingCart;
 }
