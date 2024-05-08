@@ -29,10 +29,11 @@ const cartForParty = {
 };
 
 function calculateTotalPrice(prices) {
+  let cost = 0;
   if (prices.length === 0) {
-    return `Total: €0`;
+    return `Total: ${cost}`;
   }
-  const totalPrice = Object.values(prices).reduce((sum, price) => sum + price);
+  const totalPrice = Object.values(prices).reduce((sum, price) => sum + price, cost);
 
   return `Total: €${totalPrice}`;
 }
