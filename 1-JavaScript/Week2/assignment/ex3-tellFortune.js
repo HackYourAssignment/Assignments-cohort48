@@ -32,11 +32,8 @@ body, this code is now written once only in a separated function.
 -----------------------------------------------------------------------------*/
 
 // This function should take an array as its parameter and return
-// a randomly selected element as its return value.
-function selectRandomly(elements) {
-  const randomIndex = Math.floor(Math.random() * elements.length);
-  return elements[randomIndex];
-}
+// a randomly selected element from that array
+const selectRandomly = elements => elements[Math.floor(Math.random() * elements.length)];
 
 function tellFortune(numKids, partnerNames, locations, jobTitles) {
   const selectedNumKids = selectRandomly(numKids);
