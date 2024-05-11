@@ -17,8 +17,6 @@ function doubleEvenNumbers(numbers) {
     .map((number) => number * 2);
 }
 
-console.log(doubleEvenNumbers([1, 2, 3, 4]));
-
 // ! Unit test (using Jest)
 test('doubleEvenNumbers should take the even numbers and double them', () => {
   const actual = doubleEvenNumbers([1, 2, 3, 4]);
