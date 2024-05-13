@@ -8,6 +8,7 @@ const eurosFormatter = new Intl.NumberFormat('nl-NL', {
 });
 
 function createWallet(name, cash = 0) {
+  
   function deposit(amount) {
     cash += amount;
   }
@@ -95,7 +96,7 @@ const quiz = {
       b: 'Step out of current function', 
       c: 'Step' 
     },
-    answer: undefined,
+    answer: "c",
   },
   q4: {
     question: 'What is displayed in the console?',

@@ -18,7 +18,7 @@ function createObservable() {
     subscribe: function (subscriber) {
       subscribers.push(subscriber)
     },
-    notify: function (message) {
+    notify: function () {
       subscribers.forEach((x) => x(message))
 
     },
