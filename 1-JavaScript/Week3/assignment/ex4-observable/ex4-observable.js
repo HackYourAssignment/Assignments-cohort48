@@ -12,15 +12,15 @@ Complete the `createObservable()` function as follows:
   the `subscribers` array, passing on the notification message to each 
   subscriber.
 ------------------------------------------------------------------------------*/
-
 function createObservable() {
   const subscribers = [];
   return {
     subscribe: function (subscriber) {
-      // TODO complete this function
+      subscribers.push(subscriber)
     },
-    notify: function (message) {
-      // TODO complete this function
+    notify: function () {
+      subscribers.forEach((x) => x(message))
+
     },
   };
 }
