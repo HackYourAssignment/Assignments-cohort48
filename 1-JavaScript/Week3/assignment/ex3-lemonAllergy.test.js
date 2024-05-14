@@ -1,20 +1,6 @@
 'use strict';
-/*------------------------------------------------------------------------------
-Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week4#exercise-3-lemon-allergy
+'use strict';
 
-Your mom bought you a basket of fruit, because you're doing so well in
-HackYourFuture. How sweet of her!
-
-However, she forgot that you are allergic to lemons! Let's quickly dispose of
-them before you get an attack.
-
-Complete the function called `sanitizeFruitBasket`:
-
-- It should take two parameters: an array of strings representing a fruit basket 
-  to be sanitized and a string indicating the name of the fruit to be taken out.
-- Use the `filter` array method to take out the unwanted fruit.
-- Return a new array that contains the fruits without any lemons.
-------------------------------------------------------------------------------*/
 const fruitBasket = [
   'apple',
   'lemon',
@@ -25,27 +11,32 @@ const fruitBasket = [
   'lemon',
 ];
 
-// ! Function under test
-function sanitizeFruitBasket(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function sanitizeFruitBasket(basket, unwantedFruit) {
+  return basket.filter(fruit => fruit !== unwantedFruit);
 }
 
-// ! Unit tests (using Jest)
+// Unit tests (using Jest)
 describe('sanitizeFruitBasket', () => {
   test('should take two parameters', () => {
-    // TODO replace next line with your code
-    expect(false).toBe(true);
+    expect(sanitizeFruitBasket.length).toBe(2);
   });
 
   test('should not modify the original `fruitBasket` array', () => {
     // Save the original contents of the fruit basket
     const originalFruitBasketContents = [...fruitBasket];
-    // TODO replace next line with your code
-    expect(false).toBe(true);
+    // Run the sanitize function
+    sanitizeFruitBasket(fruitBasket, 'lemon');
+    // Check if the original fruit basket is unchanged
+    expect(fruitBasket).toEqual(originalFruitBasketContents);
   });
 
   test('should return a new array that does not include the unwanted `lemon`', () => {
-    // TODO replace next line with your code
-    expect(false).toBe(true);
+    const sanitizedBasket = sanitizeFruitBasket(fruitBasket, 'lemon');
+    // Check if the sanitized basket does not contain any 'lemon'
+    expect(sanitizedBasket).not.toContain('lemon');
+    // Check if the sanitized basket contains all the other fruits
+    expect(sanitizedBasket).toEqual(expect.arrayContaining([
+      'apple', 'grapefruit', 'banana', 'watermelon'
+    ]));
   });
 });
