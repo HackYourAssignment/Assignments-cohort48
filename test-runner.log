@@ -1,0 +1,12 @@
+2024-05-07 01:51:19 info: ------------------------------------------------------
+2024-05-07 01:51:19 info: >>> Running Unit Test `ex1-doubleEvenNumbers.test` <<<
+2024-05-07 01:51:19 info: ------------------------------------------------------
+2024-05-07 01:51:20 info: All unit tests passed.
+2024-05-07 01:51:20 error: *** ESLint Report ***
+
+ex1-doubleEvenNumbers.test.js
+  16:36  error  Expected '===' and instead saw '=='  eqeqeq
+
+✖ 1 problem (1 error, 0 warnings)
+
+

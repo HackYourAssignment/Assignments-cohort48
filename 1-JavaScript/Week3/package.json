@@ -1,0 +1,12 @@
+{
+  "name": "week3",
+  "version": "1.0.0",
+  "description": "## Exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "author": "",
+  "license": "ISC"
+}
