@@ -12,7 +12,7 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 2. Complete the function named `addToShoppingCart` as follows:
 
    - It should take one argument: a grocery item (string)
-   - It should add the grocery item to `shoppingCart`. If the number of items is
+   - It should add  the grocery item to `shoppingCart`. If the number of items is
      more than three remove the first one in the array.
    - It should return a string "You bought <list-of-items>!", where 
      <list-of-items>is a comma-separated list of items from the shopping cart 
@@ -23,10 +23,16 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 const shoppingCart = ['bananas', 'milk'];
 
 // ! Function to be tested
-function addToShoppingCart(/* parameters go here */) {
+function addToShoppingCart(/* parameters go here */item) {
   // TODO complete this function
+  if (item !== undefined) {
+    shoppingCart.push(item); // Add the grocery item to the shopping cart
+    if (shoppingCart.length > 3) {
+      shoppingCart.shift(); // Remove the first item if the number of items exceeds three
+    }
+  }
+  return `You bought ${shoppingCart.join(', ')}!`; //join()method joins all element of the array into a string
 }
-
 // ! Test functions (plain vanilla JavaScript)
 function test1() {
   console.log(
