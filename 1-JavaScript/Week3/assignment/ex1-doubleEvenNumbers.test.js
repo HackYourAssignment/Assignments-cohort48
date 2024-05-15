@@ -15,12 +15,6 @@ function doubleEvenNumbers(numbers) {
     .filter((num) => num % 2 === 0) //filtering only even numbers
     .map((num) => num * 2); //pushing doubled even numbers into a new array container
 
-  const newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 0) {
-      newNumbers.push(numbers[i] * 2);
-    }
-  }
   return doubledEvenElements;
 }
 console.log(1111);

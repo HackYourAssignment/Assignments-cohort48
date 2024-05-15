@@ -32,11 +32,12 @@ const mondayTasks = [
 const hourlyRate = 25;
 
 function computeEarnings(/* TODO parameter(s) go here */ arrayTask, rate) {
-  const minsOfTask = arrayTask.map((task) => task.duration);
-  const rateOfEachTask = minsOfTask.map((min) => (min * rate) / 60);
-  const totalRate = rateOfEachTask.reduce((acc, current) => acc + current, 0);
-  const formattedTotalRate = '€' + totalRate.toFixed(2);
-  return formattedTotalRate;
+  const totalRate = arrayTask.reduce(
+    (acc, current) => acc + (current.duration * rate) / 60,
+    0
+  );
+  const formattedRate = '€' + totalRate.toFixed(2);
+  return formattedRate;
 }
 
 console.log(computeEarnings(mondayTasks, hourlyRate));
