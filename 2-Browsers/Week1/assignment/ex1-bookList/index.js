@@ -5,6 +5,14 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 I'd like to display my three favorite books inside a nice webpage!
 
 1. Iterate through the array of books.
+
+
+1. select every book
+2. print unordered list every book in p tag
+3. add every book cover url
+4. if read green not red
+
+
 2. For each book, create a `<p>`
 element with the book title and author.
 3. Use a `<ul>`  and `<li>` to display the books.
@@ -19,6 +27,22 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 
 function createBookList(books) {
   // TODO your code goes in here, return the ul element
+const ul=document.createElement("ul")
+// const red=document.getElementById("bookList").classList.add("red")
+// const green=document.getElementById("bookList").classList.add("green")
+books.forEach(book=> {
+  const li=document.createElement("li")
+
+
+  li.textContent=`${book.title}${book.author}${book.isbn}`
+  // console.log(books)
+  // console.log(ul)
+  ul.appendChild(li)
+  if (!book.alreadyRead) {
+    li.classList.add("red")
+  }
+});
+return ul
 }
 
 function main() {

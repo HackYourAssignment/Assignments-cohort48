@@ -19,6 +19,8 @@ function createCell(x, y) {
     x,
     y,
     alive,
+    lifeTime: alive ? 1 : 0,
+
   };
 }
 
@@ -58,7 +60,7 @@ function createGame(context, numRows, numColumns) {
 
     if (cell.alive) {
       // Draw living cell inside background
-      context.fillStyle = `rgb(24, 215, 236)`;
+      context.fillStyle = `rgba(24, 215, 236, 1`;
       context.fillRect(
         cell.x * CELL_SIZE + 1,
         cell.y * CELL_SIZE + 1,
@@ -171,7 +173,7 @@ function main() {
   start();
 }
 
-// ! Do not change or remove any code below
+// ! Do not change or remove any code below oki
 try {
   window.addEventListener('load', main);
 } catch {

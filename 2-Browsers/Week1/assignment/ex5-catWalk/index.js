@@ -22,7 +22,12 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
 function catWalk() {
-  // TODO complete this function
+  const img = document.getElementById('movingImage');
+  let currentLeft = parseInt(window.getComputedStyle(img).getPropertyValue('left'), 10);
+  const newLeft = currentLeft + 100;
+  img.style.left = `${newLeft}px`;
+  setInterval(moveImage, 100);
 }
-
+setInterval(catWalk, 50);
+window.addEventListener('load', catWalk);
 // TODO execute `catWalk` when the browser has completed loading the page
