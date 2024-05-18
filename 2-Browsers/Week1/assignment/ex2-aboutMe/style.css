@@ -1,1 +1,20 @@
 /* 3. Add a css rule for .list-item to make the color red. */
+*{margin: 0;
+padding: 0;
+}
+body{
+text-align: center;
+font-family: 'Courier New', Courier, monospace;
+}
+
+h1{
+  margin : 50px 10px 50px 10px;
+  color: darkgreen;
+}
+
+.listItem {
+  color: red;
+  font-weight: bold;
+  font-family: 'Courier New', Courier, monospace;
+  margin: 5px;
+}

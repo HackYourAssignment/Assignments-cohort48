@@ -15,10 +15,47 @@ The end result should look something like this:
 https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 
 -----------------------------------------------------------------------------*/
-//cspell: enable
-
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
+  // get the style my book title h1
+  const myBook = document.querySelector('h1');
+  myBook.style.textAlign = 'center';
+  myBook.style.paddingTop = '30px';
+  myBook.style.fontFamily = 'cursive';
+  // create List Item
+  const ul = document.createElement('ul');
+  ul.style.display = 'flex';
+  ul.style.justifyContent = 'space-between';
+  ul.style.listStyleType = 'none';
+
+  books.forEach((book) => {
+    const li = document.createElement('li');
+    li.style.padding = '5px';
+    li.style.margin = '5px';
+    li.style.textAlign = 'center';
+    li.style.flex = '1';
+    li.style.maxWidth = '32%';
+    li.style.backgroundColor = book.alreadyRead ? 'green' : 'red';
+
+    const p = document.createElement('p');
+    p.textContent = `${book.title} by ${book.author}`;
+    li.appendChild(p);
+
+    // create image
+    // g the means is global for all title book and if we don't write this line code can not read the url file because
+    // first we should remove any space between name of the url and can replace them
+    const formattedTitle = book.title.replace(/ /g, '_').toLowerCase();
+    const imageUrl = `./assets/${formattedTitle}.jpg`;
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = `Cover of ${book.title}`;
+    img.style.maxWidth = '300px';
+    img.style.height = '400px';
+    li.appendChild(img);
+
+    ul.appendChild(li);
+  });
+  return ul;
 }
 
 function main() {
