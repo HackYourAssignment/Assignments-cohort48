@@ -20,7 +20,7 @@ Full description at: https://github.com/HackYourFuture/Homework/tree/main/1-Java
 -----------------------------------------------------------------------------*/
 function giveCompliment(name) {
   // TODO complete this function
-  let compliments = [
+  const compliments = [
     'amazing',
     'great',
     'fantastic',
@@ -38,7 +38,7 @@ function giveCompliment(name) {
 }
 
 function main() {
-  // TODO substitute your own name for "HackYourFuture"
+ 
   const myName = 'Ali';
 
   console.log(giveCompliment(myName));
