@@ -23,14 +23,11 @@ function createWallet(name, cash = 0) {
   }
 
   function transferInto(wallet, amount) {
-    // console.log(
-    //   `Transferring ${eurosFormatter.format(amount)} from ${name} to ${
-    //     wallet.name
-    //   }`
-    // );
     // ==========================>>>>>>>>> **** if we change this line we don't get the undefined **** <<<<<<<<<<<<<==================================
     console.log(
-      `Transferring ${eurosFormatter.format(amount)} from ${getName()} to ${wallet.getName()}`
+      `Transferring ${eurosFormatter.format(
+        amount
+      )} from ${getName()} to ${wallet.getName()}`
     );
 
     const withdrawnAmount = withdraw(amount);
