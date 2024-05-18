@@ -40,7 +40,7 @@ function selectRandomly(array) {
 }
 
 function tellFortune(numKids, partnerNames, locations, jobTitles) {
-  // TODO complete this function
+  
   const kids = selectRandomly(numKids);
   const wife = selectRandomly(partnerNames);
   const locations = selectRandomly(locations);

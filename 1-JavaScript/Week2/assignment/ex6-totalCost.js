@@ -31,7 +31,7 @@ const cartForParty = {
 
 function calculateTotalPrice(/* TODO parameter(s) go here */cart) {
   
-  let total = 0;
+  const total = 0;
   for (let item in cart) {
     if (typeof cart[item] === 'number') {
       total += cart[item];
