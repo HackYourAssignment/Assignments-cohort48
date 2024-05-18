@@ -47,14 +47,14 @@ function test1() {
   console.log('\nTest 1: calculateTotalPrice should take one parameter');
   // TODO replace this comment with your code
   const result = calculateTotalPrice({ apples: 2.99, oranges: 1.49 });
-  console.log(result);   // Output: Total: €4.48
+  console.assert(expected === result)    // Output: Total: €4.48
 }
 
 function test2() {
   console.log('\nTest 2: return correct output when passed cartForParty');
   // TODO replace this comment with your code
   const result = calculateTotalPrice(cartForParty);
-  console.log(result);  // Output: Total: €58.50
+  console.assert(expected === result)   // Output: Total: €58.50
 }
 
 function test() {
