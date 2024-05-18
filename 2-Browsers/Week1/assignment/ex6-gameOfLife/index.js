@@ -19,6 +19,8 @@ function createCell(x, y) {
     x,
     y,
     alive,
+    lifeTime: alive ? 1 : 0,
+
   };
 }
 
@@ -47,7 +49,7 @@ function createGame(context, numRows, numColumns) {
 
   // Draw a cell onto the canvas
   function drawCell(cell) {
-    // Draw cell background
+    
     context.fillStyle = '#303030';
     context.fillRect(
       cell.x * CELL_SIZE,
@@ -58,7 +60,17 @@ function createGame(context, numRows, numColumns) {
 
     if (cell.alive) {
       // Draw living cell inside background
-      context.fillStyle = `rgb(24, 215, 236)`;
+        let opacity = 1;
+        if (cell.lifeTime === 1) {
+          opacity = 0.25;
+        } else if (cell.lifeTime === 2) {
+          opacity = 0.5;
+        } else if (cell.lifeTime === 3) {
+          opacity = 0.75;
+        }  
+         
+        
+      context.fillStyle = `rgba(24, 215, 236, ${opacity}`;
       context.fillRect(
         cell.x * CELL_SIZE + 1,
         cell.y * CELL_SIZE + 1,
@@ -103,13 +115,16 @@ function createGame(context, numRows, numColumns) {
 
       if (numAlive === 2) {
         // Living cell remains living, dead cell remains dead
-        cell.nextAlive = cell.alive;
+        cell.nextAlive = cell.alive;        
+        if(cell.alive) cell.lifeTime++
       } else if (numAlive === 3) {
         // Dead cell becomes living, living cell remains living
-        cell.nextAlive = true;
+        cell.nextAlive = true;        
+        if(cell.alive) cell.lifeTime++
       } else {
         // Living cell dies, dead cell remains dead
         cell.nextAlive = false;
+        cell.lifeTime =0
       }
     });
 
@@ -171,7 +186,7 @@ function main() {
   start();
 }
 
-// ! Do not change or remove any code below
+// ! Do not change or remove any code below oki
 try {
   window.addEventListener('load', main);
 } catch {
