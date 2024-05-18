@@ -24,7 +24,7 @@ const shoppingCart = ['bananas', 'milk'];
 
 // ! Function to be tested
 function addToShoppingCart(item) {
-  // TODO complete this function
+
   if (item!==null) {
     shoppingCart.push(item)
     if (shoppingCart.length>3) {
