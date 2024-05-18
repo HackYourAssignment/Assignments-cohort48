@@ -47,7 +47,7 @@ function test2() {
 function test3() {
   console.log('Test 3: `chocolate` should be added');
   const initialCart = ['bananas', 'milk'];
-  const result = addToShoppingCart(initialCart.slice(), 'chocolate');
+  const result = addToShoppingCart(initialCart, 'chocolate');
   console.assert(result.length === 3);
   console.assert(result.includes('chocolate'));
 }
@@ -55,7 +55,7 @@ function test3() {
 function test4() {
   console.log('Test 4: `waffles` should be added');
   const initialCart = ['bananas', 'milk', 'chocolate'];
-  const result = addToShoppingCart(initialCart.slice(), 'waffles');
+  const result = addToShoppingCart(initialCart, 'waffles');
   console.assert(result.length === 3);
   console.assert(result.includes('waffles'));
 }
