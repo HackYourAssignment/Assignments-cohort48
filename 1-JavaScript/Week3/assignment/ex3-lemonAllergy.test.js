@@ -26,7 +26,8 @@ const fruitBasket = [
 ];
 
 // ! Function under test
-function sanitizeFruitBasket(/* TODO parameter(s) go here */) {
+function sanitizeFruitBasket(fruitBasket,fruitTakenOut){
+  return fruitBasket.filter(fruits=> fruits !== fruitTakenOut);
   // TODO complete this function
 }
 

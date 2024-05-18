@@ -1,3 +1,4 @@
+
 'use strict';
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week3#exercise-6-total-cost-is
@@ -21,11 +22,20 @@ instead!
 3. Complete the unit test functions and verify that all is working as expected.
 -----------------------------------------------------------------------------*/
 const cartForParty = {
+  beer: 2.5,
+  water: 1.60,
+  chips: 9.3,
+  cola: 7.5,
   // TODO complete this object
 };
 
-function calculateTotalPrice(/* TODO parameter(s) go here */) {
+function calculateTotalPrice(objects) {
   // TODO replace this comment with your code
+  let price = 0;
+  for (const item in objects){
+    price += objects[item];
+  }
+  return price;
 }
 
 // ! Test functions (plain vanilla JavaScript)
