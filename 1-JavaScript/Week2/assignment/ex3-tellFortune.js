@@ -41,10 +41,10 @@ function selectRandomly(array) {
 
 function tellFortune(numKids, partnerNames, locations, jobTitles) {
   // TODO complete this function
-  let kids = selectRandomly(numKids);
-  let wife = selectRandomly(partnerNames);
-  let locations = selectRandomly(locations);
-  let jobs = selectRandomly(jobTitles);
+  const kids = selectRandomly(numKids);
+  const wife = selectRandomly(partnerNames);
+  const locations = selectRandomly(locations);
+  const jobs = selectRandomly(jobTitles);
   return `You will be a ${jobs} in ${location}, married to ${wife} with ${kids} kids.`;
 
 }
