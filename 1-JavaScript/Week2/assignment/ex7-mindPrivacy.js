@@ -31,7 +31,7 @@ const employeeRecords = [
 
 // ! Function under test
 function filterPrivateData(employees) {
-  // TODO complete this function
+  
   return array.employees( ({name,occupation,email})=>({name,occupation,email})
  )
 }
