@@ -106,12 +106,17 @@ function createGame(context, numRows, numColumns) {
       if (numAlive === 2) {
         // Living cell remains living, dead cell remains dead
         cell.nextAlive = cell.alive;
+        
+        if(cell.alive) cell.lifeTime++
       } else if (numAlive === 3) {
         // Dead cell becomes living, living cell remains living
         cell.nextAlive = true;
+        
+        if(cell.alive) cell.lifeTime++
       } else {
         // Living cell dies, dead cell remains dead
         cell.nextAlive = false;
+        cell.lifeTime =0
       }
     });
 
