@@ -37,7 +37,7 @@ function computeEarnings(tasks, rate) {
           return `€${totalEarnings}`;
 }
 
-console.log(computeEarnings(mondayTasks, hourlyRate));
+
 // ! Unit tests (using Jest)
 describe('computeEarnings', () => {
   test('should take two parameters', () => {
