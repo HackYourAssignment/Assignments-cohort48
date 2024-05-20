@@ -19,7 +19,8 @@ function createCell(x, y) {
     x,
     y,
     alive,
-  };
+    lifeTime: alive? 1 : 0
+};
 }
 
 // Create the game "engine" with a closure
@@ -58,7 +59,8 @@ function createGame(context, numRows, numColumns) {
 
     if (cell.alive) {
       // Draw living cell inside background
-      context.fillStyle = `rgb(24, 215, 236)`;
+      let opacity = Math.min(cell.lifeTime * 0.25, 1);
+      context.fillStyle = `rgba(24, 215, 236, ${opacity})`;
       context.fillRect(
         cell.x * CELL_SIZE + 1,
         cell.y * CELL_SIZE + 1,
@@ -115,6 +117,13 @@ function createGame(context, numRows, numColumns) {
 
     // Apply the newly computed state to the cells
     forEachCell((cell) => {
+      if (cell.alive && cell.nextAlive) {
+        cell.lifeTime ++;
+      } else if (cell.alive && !cell.nextAlive) {
+        cell.lifeTime = 0;
+      } else if (!cell.alive && cell.nextAlive) {
+        cell.lifeTime = 1;
+      }
       cell.alive = cell.nextAlive;
     });
   }

@@ -1,1 +1,8 @@
 /* Write your style here */
+li {
+    padding: 20px;
+    margin: 10px;
+    list-style: none;
+    width: 400px;
+}
+
