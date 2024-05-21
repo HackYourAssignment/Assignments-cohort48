@@ -29,7 +29,7 @@ const cartForParty = {
   vodka: 14.50
 };
 
-function calculateTotalPrice(/* TODO parameter(s) go here */cart) {
+function calculateTotalPrice(cart) {
   
   const total = 0;
   for (let item in cart) {
