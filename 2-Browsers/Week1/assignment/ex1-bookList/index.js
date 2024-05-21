@@ -19,6 +19,29 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 
 function createBookList(books) {
   // TODO your code goes in here, return the ul element
+const ul = document.createElement('ul');
+
+books.foreach((book) =>{
+  const li = document.createElement('li');
+  const p = document.createElement('p');
+
+  p.textContent = '${book.title} by ${book.author}';
+  li.appendChild(p);
+
+  const img = Document.createElement('img');
+  img.src = book.image;
+  img.alt = book.title;
+  li.appendChild(img);
+
+  if(books.alreadyRead === true){
+    li.style.backgroundColor = 'green';
+  }else{
+    li.style.backgroundColor = 'red';
+  }
+
+  ul.appendChild(li);
+})
+return ul;
 }
 
 function main() {

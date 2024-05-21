@@ -9,6 +9,15 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 function hijackGoogleLogo() {
   // TODO your code goes in here
+  var googleLogo = document.querySelector('img[alt="Google"]');
+
+  if (googleLogo) {
+    const hackYourFutureLogoUrl = "https://www.hackyourfuture.dk/static/logo-dark.svg";
+    googleLogo.src = hackYourFutureLogoUrl;
+    googleLogo.srcset = hackYourFutureLogoUrl;
+  }
 }
+
+
 
 hijackGoogleLogo();

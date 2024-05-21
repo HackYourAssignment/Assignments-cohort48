@@ -9,6 +9,21 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 function addCurrentTime() {
   // TODO complete this function
+  const timeElement = document.getElementById('time');  //assumes HTML element ID time 
+
+
+  function formatTime() {
+    const now = new Date();
+
+    const hours = String(now.getHours()).padStart(2, '0');
+    const minutes = String(now.getMinutes()).padStart(2, '0');
+    const seconds = String(now.getSeconds()).padStart(2, '0');
+    const formattedTime = `${hours}:${minutes}:${seconds}`;
+
+    timeElement.textContent = formattedTime;
+  }
+  formatTime(); 
+  setInterval(formatTime, 1000); 
 }
 
-// TODO execute `addCurrentTime` when the browser has completed loading the page
+window.addEventListener('load', addCurrentTime);
