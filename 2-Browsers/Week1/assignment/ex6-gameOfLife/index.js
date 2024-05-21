@@ -7,6 +7,30 @@ THIS IS A PREP EXERCISE FOR THE Q&A SESSION, IT SHOULD NOT BE PART OF THE ASSIGN
 Adapted from: https://spicyyoghurt.com/tutorials/javascript/conways-game-of-life-canvas
 Refactored from ES6 Class syntax to regular functions
 ------------------------------------------------------------------------------*/
+
+
+// Exercise
+// In the supplied JavaScript code the color of all living cells is a single shade of blue. This is in contrast to the illustration above where living cells have different shades of blue, depending on their life time. Your job is as follows:
+
+// In function createCell(), add a numeric lifeTime property to the object and assign it the value of one if the cell is initially alive or zero if it is initially dead.
+
+// In function drawCell(), replace rgb() with rgba() that adds a fourth parameter indicating opacity to the rgb value like this:
+
+// context.fillStyle = `rgba(24, 215, 236, ${opacity})`;
+// The opacity of each rendered cell should depend on the cell's lifeTime property, as specified in this table:
+
+// lifeTime	opacity
+// 1	0.25
+// 2	0.5
+// 3	0.75
+// 4+	1
+// In function updateGrid() add code to update the lifeTime value of each cell:
+
+// A living cell that remains living should have its lifeTime incremented by one.
+// A living cell that dies should have its lifeTime reset to zero.
+// A dead cell that is brought to life should have its lifeTime reset to one.
+
+// ------------------------------------------------------------------------------*/
 const CELL_SIZE = 10;
 const NUM_COLUMNS = 75;
 const NUM_ROWS = 40;
@@ -15,10 +39,12 @@ const NUM_ROWS = 40;
 // life or death
 function createCell(x, y) {
   const alive = Math.random() > 0.5;
+  const lifeTime = alive ? 1 : 0 ;  //Add 1 is alive or 0 is dead.
   return {
     x,
     y,
     alive,
+    lifeTime,       //Add life time 
   };
 }
 
@@ -57,6 +83,12 @@ function createGame(context, numRows, numColumns) {
     );
 
     if (cell.alive) {
+      // opacity based on lifeTime
+      const opacity = 
+        cell.lifeTime <= 1 ? 0.25 
+      : cell.lifeTime <= 2 ? 0.5 
+      : cell.lifeTime <= 3 ? 0.75 : 1;
+
       // Draw living cell inside background
       context.fillStyle = `rgb(24, 215, 236)`;
       context.fillRect(
@@ -115,6 +147,13 @@ function createGame(context, numRows, numColumns) {
 
     // Apply the newly computed state to the cells
     forEachCell((cell) => {
+      if (cell.alive && cell.nextAlive){
+        cell.lifeTime += 1;  // Living cell remains living, increment lifeTime
+      }else if (cell.alive && cell.nextAlive){
+        cell.lifeTime = 1  // Dead cell becomes living, reset lifeTime to 1
+      }else if(cell.alive && cell.nextAlive){
+        cell.lifeTime = 0 // Living cell dies, reset lifeTime to 0
+      }
       cell.alive = cell.nextAlive;
     });
   }
