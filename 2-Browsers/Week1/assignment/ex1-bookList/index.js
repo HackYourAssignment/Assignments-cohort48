@@ -25,18 +25,9 @@ function createBookList(books) {
   const ulElement = document.createComment("ul")
 
   books.forEach( book =>{
-    const liElement = document.createElement("li")
-    const pElement =  document.createElement("p")
-    pElement.textContent = ` ${ book.title} by ${book.author}`;
+  
 
-    const imgElement = document.createElement("img");
-    imgElement = `https://example.com/book-covers/${book.isbn}.jpg`;
-
-    pElement.style.color = book.alreadyRead ? "green" : "red" ;
-
-    liElement.appendChild(pElement);
-    liElement.appendChild(imgElement)
-    ulElement.appendChild(liElement)
+  
   })
 
   return ulElement
