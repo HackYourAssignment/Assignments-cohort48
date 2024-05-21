@@ -5,7 +5,10 @@
 *{
   margin: auto;
 }
-
+img{
+  width: 15rem;
+  height: 15rem;
+}
 #bookList{
   color: green;
   background: black;

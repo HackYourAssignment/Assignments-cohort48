@@ -27,16 +27,15 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 
 function createBookList(books) {
   // TODO your code goes in here, return the ul element
-  // const red=document.getElementById("bookList").classList.add("red")
-  // const green=document.getElementById("bookList").classList.add("green")
   const ul=document.createElement("ul")
   books.forEach(book=> {
   const li=document.createElement("li")
-
-
+  const pic=document.createElement("img")
   li.textContent=`${book.title}${book.author}${book.isbn}`
+  pic.src=book.pic
   // console.log(books)
   // console.log(ul)
+  li.appendChild(pic)
   ul.appendChild(li)
   if (!book.alreadyRead) {
     li.classList.add("red")
@@ -52,18 +51,23 @@ function main() {
       author: 'Don Norman',
       isbn: '978-0465050659',
       alreadyRead: false,
+      pic:"https://i.pinimg.com/originals/27/fd/70/27fd70fb285f83c3922c86c2d941e8b5.jpg"
     },
     {
       title: 'The Most Human Human',
       author: 'Brian Christian',
       isbn: '978-1617933431',
       alreadyRead: true,
+      pic:"https://w0.peakpx.com/wallpaper/653/999/HD-wallpaper-y-letter-y-fire-flame-y-letter-fire-flame-letter-y-font.jpg"
+
     },
     {
       title: 'The Pragmatic Programmer',
       author: 'Andrew Hunt',
       isbn: '978-0201616224',
       alreadyRead: true,
+      pic:"https://s.cafebazaar.ir/images/upload/screenshot/com.WallpaperStudio.FLetterrwallpaper.images.HD-fe8ae94a-49dc-4a07-bcbb-3f849b8d7779.jpeg?x-img=v1/resize,h_600,lossless_false/optimize"
+
     },
   ];
 
