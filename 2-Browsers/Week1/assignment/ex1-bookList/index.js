@@ -27,10 +27,10 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 
 function createBookList(books) {
   // TODO your code goes in here, return the ul element
-const ul=document.createElement("ul")
-// const red=document.getElementById("bookList").classList.add("red")
-// const green=document.getElementById("bookList").classList.add("green")
-books.forEach(book=> {
+  // const red=document.getElementById("bookList").classList.add("red")
+  // const green=document.getElementById("bookList").classList.add("green")
+  const ul=document.createElement("ul")
+  books.forEach(book=> {
   const li=document.createElement("li")
 
 

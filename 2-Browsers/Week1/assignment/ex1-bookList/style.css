@@ -2,8 +2,28 @@
 /* #bookListRed{
   color: red;
 } */
+*{
+  margin: auto;
+}
+
 #bookList{
   color: green;
+  background: black;
+  padding: 14px;
+  width: 90%;
+  height: 40rem;
+}
+ul{
+  background: purple;
+  width: 90%;
+  height: 30rem;
+  display: flex;
+}
+li{
+  background:wheat;
+  width: 90%;
+  height: 90%;
+  margin: 10px;
 }
 .red{
   color: red;
