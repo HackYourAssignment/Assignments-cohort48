@@ -13,6 +13,8 @@ function addCurrentTime() {
   const currentTime = now.toLocaleTimeString();
   const timeElement = document.getElementById('current-time');
   timeElement.textContent = currentTime;
+  document.body.appendChild(timeElement)
+  
 }
 
 setInterval(addCurrentTime, 1000);
