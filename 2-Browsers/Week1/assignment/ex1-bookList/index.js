@@ -17,8 +17,30 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 -----------------------------------------------------------------------------*/
 //cspell: enable
 
+// In this assignment you are not allowed to use .innerHTML. To create HTML elements, use document.createElement().
+// To set the text content of an element, use .textContent. The assignment tests currently do not support .innerText.
+
+
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
+  const ulElement = document.createComment("ul")
+
+  books.forEach( book =>{
+    const liElement = document.createElement("li")
+    const pElement =  document.createElement("p")
+    pElement.textContent = ` ${ book.title} by ${book.author}`;
+
+    const imgElement = document.createElement("img");
+    imgElement = `https://example.com/book-covers/${book.isbn}.jpg`;
+
+    pElement.style.color = book.alreadyRead ? "green" : "red" ;
+
+    liElement.appendChild(pElement);
+    liElement.appendChild(imgElement)
+    ulElement.appendChild(liElement)
+  })
+
+  return ulElement
+  
 }
 
 function main() {
