@@ -1,4 +1,5 @@
 'use strict';
+
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-Browsers/Week1#exercise-4-whats-the-time
 
@@ -8,7 +9,16 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 2. Have the function execute when it's loading in the browser.
 ------------------------------------------------------------------------------*/
 function addCurrentTime() {
-  // TODO complete this function
-}
+  const timeElement = document.createElement('div');
 
-// TODO execute `addCurrentTime` when the browser has completed loading the page
+  const now = new Date();
+  const currentTime = now.toLocaleTimeString(); //HH:MM:SS
+  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
+  timeElement.textContent = currentTime;
+  document.body.appendChild(timeElement);
+  console.log(timeElement);
+}
+setInterval(addCurrentTime, 1000);
+console.log(181);
+
+window.addEventListener('load', addCurrentTime);
