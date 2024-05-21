@@ -9,7 +9,7 @@ Full description atL https://github.com/HackYourFuture/Assignments/tree/main/1-J
 - Multiply each duration by a hourly rate for billing and sum it all up.
 - Make sure the program can be used on any array of objects that contain a
   `duration` property with a number value.
-------------------------------------------------------------------------------*/
+-------------------------------------------------------------------------*/
 const mondayTasks = [
   {
     name: 'Daily standup',
