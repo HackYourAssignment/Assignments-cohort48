@@ -21,35 +21,35 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
-function catWalk() {
-   const catImg = document.querySelector('img');
-   catImg.style.left = '0px';
+window.onload = () => {
+  const cat = document.getElementById('img');
+  const walkingCatUrl = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+  const dancingCatUrl = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+  let catLeftPosition = 0;
+  const screenWidth = window.innerWidth;
+  const catMiddlePosition = (screenWidth - cat.width) / 2;
 
-   let catPosition = 0;
-const walkingCatUrl = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
-const dancingCatUrl = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
-const screenWidth = window.innerWidth;
+  function catWalk() {
+      catLeftPosition += 10;
+      if (catLeftPosition >= screenWidth) {
+          catLeftPosition = 0;
+      }
 
-function catWalk() {
-  catPosition += 10;
-  catImg.style.left = `${catPosition}px`;
+      cat.style.left = `${catLeftPosition}px`;
 
-  
-  if (catPosition >= screenWidth - catImg.width) {
-    catPosition = 0;
+      if (catLeftPosition >= catMiddlePosition && catLeftPosition < catMiddlePosition + 10) {
+          clearInterval(catInterval);
+          cat.src = dancingCatUrl;
+          setTimeout(() => {
+              cat.src = walkingCatUrl;
+              catInterval = setInterval(catWalk, 50);
+          }, 5000)
+      }
   }
 
-  
-  if (catPosition === screenWidth / 2) {
-    catImg.src = dancingCatUrl;
-    setTimeout(() => {
-      catImg.src = walkingCatUrl;
-    }, 5000);
-  }
-}
-}
-window.addEventListener('load', () => {
-   setInterval(catWalk, 50);
- });
+
+  let catInterval = setInterval(catWalk, 50);
+};
+
 
 
