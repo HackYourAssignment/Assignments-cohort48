@@ -9,7 +9,7 @@ Full description atL https://github.com/HackYourFuture/Assignments/tree/main/1-J
 - Multiply each duration by a hourly rate for billing and sum it all up.
 - Make sure the program can be used on any array of objects that contain a
   `duration` property with a number value.
-------------------------------------------------------------------------------*/
+-------------------------------------------------------------------------*/
 const mondayTasks = [
   {
     name: 'Daily standup',
@@ -31,15 +31,16 @@ const mondayTasks = [
 
 const hourlyRate = 25;
 
-function computeEarnings(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function computeEarnings(tasks, rate) {
+  const totalEarnings=  tasks
+      .map(task => (task.duration/60) * rate).reduce((acc, curr) => acc + curr, 0)     
+          return `€${totalEarnings}`;
 }
+
 
 // ! Unit tests (using Jest)
 describe('computeEarnings', () => {
   test('should take two parameters', () => {
-    // The `.length` property indicates the number of parameters expected by
-    // the function.
     expect(computeEarnings).toHaveLength(2);
   });
 
