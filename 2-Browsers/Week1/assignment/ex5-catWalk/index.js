@@ -1,24 +1,62 @@
 'use strict';
-
 /*------------------------------------------------------------------------------
-Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-Browsers/Week1#exercise-4-whats-the-time
+Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-Browsers/Week1#exercise-5-the-cat-walk
 
-1. Inside the `index.js`, complete the `addCurrentTime` to add the current time 
-  to the webpage. Make sure it's written in the HH:MM:SS notation (hour, minute,
-  second). Use `setInterval()` to make sure the time stays current.
-2. Have the function execute when it's loading in the browser.
-------------------------------------------------------------------------------*/
-function addCurrentTime() {
-  const timeElement = document.createElement('div');
+1. Create a variable to store a reference to the `<img>` element.
+2. Change the style of the `<img>` to have a `left` of `0px`, so that it starts 
+   at the left hand of the screen.
+3. Complete the function called catWalk() to move the cat 10 pixels to the right
+   of where it started, by changing the `left` style property.
+4. Call that function every 50 milliseconds. Your cat should now be moving 
+   across the screen from left to right. Hurrah!
+5. When the cat reaches the right-hand of the screen, restart them at the left 
+   hand side (`0px`). So they should keep walking from left to right across the 
+   screen, forever and ever.
+6. When the cat reaches the middle of the screen, replace the img with an image 
+   of a cat dancing (use this URL given below), keep it dancing for 5 seconds, 
+   and then replace the img with the original image and have it 
+   continue the walk.
 
-  const now = new Date();
-  const currentTime = now.toLocaleTimeString(); //HH:MM:SS
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
-  timeElement.textContent = currentTime;
-  document.body.appendChild(timeElement);
-  console.log(timeElement);
+   Dancing cat URL:
+
+   https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
+-----------------------------------------------------------------------------*/
+function catWalk() {
+    const catImg = document.querySelector("img");
+    let position = 0;
+    let movingRight = true;
+
+    const STEP_SIZE_PX = 10; // Step size in pixels
+    const STEP_TIME_MS = 50; // Step time in milliseconds
+    const DANCE_TIME_MS = 5000; // Dance time in milliseconds
+
+    function changeCatImageToDance() {
+        catImg.src = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+        setTimeout(function() {
+            catImg.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
+        }, DANCE_TIME_MS); // Change back to walking after DANCE_TIME_MS milliseconds
+    }
+
+    function moveCat() {
+        const screenWidth = document.body.clientWidth;
+
+        if (movingRight) {
+            position += STEP_SIZE_PX; // Move STEP_SIZE_PX pixels to the right
+            catImg.style.left = position + "px";
+
+            if (position >= screenWidth) {
+                position = -catImg.width; // Restart at the left-hand side
+                catImg.style.left = position + "px";
+            }
+
+            if (position >= screenWidth / 2) {
+                changeCatImageToDance(); // Change cat image to dancing at the middle
+            }
+        }
+    }
+
+    setInterval(moveCat, STEP_TIME_MS); // Call moveCat function every STEP_TIME_MS milliseconds
 }
-setInterval(addCurrentTime, 1000);
-console.log(181);
 
-window.addEventListener('load', addCurrentTime);
+// Execute `catWalk` function when the browser has completed loading the page
+window.addEventListener('load', catWalk);

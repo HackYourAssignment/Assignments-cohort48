@@ -11,9 +11,9 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
 
 function replaceInfo(info) {
-  document.querySelector('#nickname').textContent = info.nickname;
-  document.querySelector('#fav-food').textContent = info.favFood;
-  document.querySelector('#hometown').textContent = info.homeTown;
+  document.getElementById('nickname').textContent = info.nickname;
+  document.getElementById('fav-food').textContent = info.favFood;
+  document.getElementById('hometown').textContent = info.homeTown;
 }
 function updateListItems() {
   const listItems = document.querySelectorAll('li');
@@ -29,6 +29,5 @@ function main() {
   };
   replaceInfo(myInfo);
   updateListItems();
-  console.log();
 }
 window.addEventListener('load', main);

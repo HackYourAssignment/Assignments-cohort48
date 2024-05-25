@@ -16,9 +16,7 @@ function addCurrentTime() {
   // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
   timeElement.textContent = currentTime;
   document.body.appendChild(timeElement);
-  console.log(timeElement);
 }
 setInterval(addCurrentTime, 1000);
-console.log(181);
 
 window.addEventListener('load', addCurrentTime);

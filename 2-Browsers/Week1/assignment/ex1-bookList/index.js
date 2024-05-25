@@ -21,8 +21,7 @@ function createBookList(books) {
   const ulElement = document.createElement('ul');
   books.forEach((book) => {
     const liElement = document.createElement('li');
-
-    const pElement = document.createElement('p');
+     const pElement = document.createElement('p');
     pElement.textContent = `${book.title} by ${book.author}  `;
     liElement.appendChild(pElement);
     const imgElement = document.createElement('img');
@@ -49,7 +48,7 @@ function main() {
     {
       title: 'The Most Human Human',
       author: 'Brian Christian',
-      isbn: '978-1617933431',
+      isbn: '978-0307476708',
       alreadyRead: true,
     },
     {
