@@ -25,7 +25,7 @@ function createBookList(books) {
     pElement.textContent = `${book.title} by ${book.author}  `;
     liElement.appendChild(pElement);
     const imgElement = document.createElement('img');
-    imgElement.src = `https://covers.openlibrary.org/b/isbn/${book.isbn}-L.jpg`;
+    imgElement.src = book.image;
     liElement.appendChild(imgElement);
     if (book.alreadyRead) {
       liElement.style.backgroundColor = 'green';
@@ -44,18 +44,21 @@ function main() {
       author: 'Don Norman',
       isbn: '978-0465050659',
       alreadyRead: false,
+      image:'https://media.s-bol.com/7ov383lj3Rr/550x824.jpg'
     },
     {
       title: 'The Most Human Human',
       author: 'Brian Christian',
       isbn: '978-0307476708',
       alreadyRead: true,
+      image:'https://i.ebayimg.com/images/g/Ud4AAOSw0apmQ-cC/s-l960.jpg'
     },
     {
       title: 'The Pragmatic Programmer',
       author: 'Andrew Hunt',
       isbn: '978-0201616224',
       alreadyRead: true,
+      image:'https://m.media-amazon.com/images/I/71f743sOPoL._SY466_.jpg'
     },
   ];
 

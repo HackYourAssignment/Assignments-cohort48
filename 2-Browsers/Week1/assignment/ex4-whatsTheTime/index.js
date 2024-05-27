@@ -10,13 +10,17 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 function addCurrentTime() {
   const timeElement = document.createElement('div');
+  document.body.appendChild(timeElement)
 
-  const now = new Date();
-  const currentTime = now.toLocaleTimeString(); //HH:MM:SS
-  // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
-  timeElement.textContent = currentTime;
-  document.body.appendChild(timeElement);
+  function updateTime(){
+    const now = new Date();
+    const currentTime = now.toLocaleTimeString(); //HH:MM:SS
+    // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Date/toLocaleTimeString
+    timeElement.textContent = currentTime;
+  }
+  updateTime()
+  setInterval(updateTime, 1000);
 }
-setInterval(addCurrentTime, 1000);
+
 
 window.addEventListener('load', addCurrentTime);

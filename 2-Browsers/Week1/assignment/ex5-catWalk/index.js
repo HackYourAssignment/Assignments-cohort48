@@ -21,42 +21,46 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+
 function catWalk() {
     const catImg = document.querySelector("img");
     let position = 0;
-    let movingRight = true;
+    const originalSrc = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
 
-    const STEP_SIZE_PX = 10; // Step size in pixels
-    const STEP_TIME_MS = 50; // Step time in milliseconds
-    const DANCE_TIME_MS = 5000; // Dance time in milliseconds
-
-    function changeCatImageToDance() {
-        catImg.src = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
-        setTimeout(function() {
-            catImg.src = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
-        }, DANCE_TIME_MS); // Change back to walking after DANCE_TIME_MS milliseconds
-    }
+    const STEP_SIZE_PX = 10; 
+    const STEP_TIME_MS = 50; 
+    const DANCE_TIME_MS = 5000; 
 
     function moveCat() {
         const screenWidth = document.body.clientWidth;
+        const catWidth = catImg.width;
+        const middleScreen = (screenWidth - catWidth) / 2;
 
-        if (movingRight) {
-            position += STEP_SIZE_PX; // Move STEP_SIZE_PX pixels to the right
-            catImg.style.left = position + "px";
-
-            if (position >= screenWidth) {
-                position = -catImg.width; // Restart at the left-hand side
-                catImg.style.left = position + "px";
-            }
-
-            if (position >= screenWidth / 2) {
-                changeCatImageToDance(); // Change cat image to dancing at the middle
-            }
+        if (position >= middleScreen && position < middleScreen + STEP_SIZE_PX) {
+           
+            catImg.src = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+            setTimeout(function() {
+                catImg.src = originalSrc;
+                position += STEP_SIZE_PX; 
+                requestAnimationFrame(moveCat); 
+            }, DANCE_TIME_MS);
+            return;
         }
+
+        position += STEP_SIZE_PX; 
+        catImg.style.left = position + "px";
+
+        if (position >= screenWidth) {
+            position = -catWidth;
+        }
+
+        requestAnimationFrame(moveCat);
     }
 
-    setInterval(moveCat, STEP_TIME_MS); // Call moveCat function every STEP_TIME_MS milliseconds
+    catImg.style.position = 'absolute'; 
+    catImg.style.left = position + 'px'; 
+    moveCat(); 
 }
 
-// Execute `catWalk` function when the browser has completed loading the page
+
 window.addEventListener('load', catWalk);
