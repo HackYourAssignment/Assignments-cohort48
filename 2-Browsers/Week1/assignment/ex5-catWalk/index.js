@@ -1,5 +1,4 @@
 'use strict';
-
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-Browsers/Week1#exercise-5-the-cat-walk
 
@@ -19,48 +18,52 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
    continue the walk.
 
    Dancing cat URL:
+
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
 
-const STEP_SIZE_PX = 10; // Step size in pixels
-const STEP_TIME_MS = 50; // Step time in milliseconds
-const DANCE_TIME_MS = 5000; // Dance time in milliseconds
-
-let img = document.querySelector('img');
-img.style.left = '0px';
-let walkInterval;
-let isDancing = false;
-
 function catWalk() {
-  let currentLeft = parseInt(img.style.left);
-  let windowWidth = window.innerWidth;
-  let imgWidth = img.offsetWidth;
+    const catImg = document.querySelector("img");
+    let position = 0;
+    const originalSrc = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
 
-  // Move the cat 10 pixels to the right
-  img.style.left = (currentLeft + STEP_SIZE_PX) + 'px';
+    const STEP_SIZE_PX = 10; 
+   
+   
+   const STEP_TIME_MS = 50; 
+    const DANCE_TIME_MS = 5000; 
 
-  // Reset the cat to the left side when it reaches the right end
-  if (currentLeft + imgWidth >= windowWidth) {
-    img.style.left = '0px';
-  }
+    function moveCat() {
+        const screenWidth = document.body.clientWidth;
+        const catWidth = catImg.width;
+       
+        const middleScreen = (screenWidth - catWidth) / 2;
 
-  // Define the middle of the screen
-  let middle = (windowWidth - imgWidth) / 2;
+        if (position >= middleScreen && position < middleScreen + STEP_SIZE_PX) {
+           
+            catImg.src = "https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif";
+            setTimeout(function() {
+                catImg.src = originalSrc;
+                position += STEP_SIZE_PX; 
+                requestAnimationFrame(moveCat); 
+            }, DANCE_TIME_MS);
+            return;
+        }
 
-  // Check if the cat is in the middle and start dancing
-  if (!isDancing && currentLeft >= middle - STEP_SIZE_PX && currentLeft <= middle + STEP_SIZE_PX) {
-    isDancing = true;
-    clearInterval(walkInterval);
-    img.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+        position += STEP_SIZE_PX; //added position
+        catImg.style.left = position + "px";
 
-    // After 5 seconds, revert to the walking cat image and continue walking
-    setTimeout(() => {
-      img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
-      isDancing = false;
-      walkInterval = setInterval(catWalk, STEP_TIME_MS);
-    }, DANCE_TIME_MS);
-  }
+        if (position >= screenWidth) {
+            position = -catWidth;
+        }
+
+        requestAnimationFrame(moveCat);
+    }
+
+    catImg.style.position = 'absolute'; 
+    catImg.style.left = position + 'px'; 
+    moveCat(); 
 }
 
-// Start the cat walk
-walkInterval = setInterval(catWalk, STEP_TIME_MS);
+
+window.addEventListener('load', catWalk);
