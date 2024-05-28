@@ -27,10 +27,6 @@ function catWalk() {
     let position = 0;
     const originalSrc = "http://www.anniemation.com/clip_art/images/cat-walk.gif";
 
-    const STEP_SIZE_PX = 10; 
-   
-   
-   const STEP_TIME_MS = 50; 
     const DANCE_TIME_MS = 5000; 
 
     function moveCat() {
