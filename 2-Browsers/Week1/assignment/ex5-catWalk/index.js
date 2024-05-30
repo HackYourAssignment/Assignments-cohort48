@@ -24,13 +24,14 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 const STEP_SIZE_PX = 10;  // Step size in pixels
 const STEP_TIME_MS = 50;  // Step time in milliseconds
 const DANCE_TIME_MS = 5000; // Dance time in milliseconds
-window.onload = () => {
+
+const catWalk = () => {
    const cat = document.getElementById('img');
    const walkingCatUrl = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
    const dancingCatUrl = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
    let catLeftPosition = 0;
-   const screenWidth = window.innerWidth;
-   const catMiddlePosition = (screenWidth - cat.width) / 2;
+   const screenWidth = -cat.offsetWidth;
+   const catMiddlePosition = (screenWidth - cat.offsetWidth) / 2;
 
    function catWalk() {
        catLeftPosition += 10;
