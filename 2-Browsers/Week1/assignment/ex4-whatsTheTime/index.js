@@ -23,19 +23,17 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 function addCurrentTime() {
 
-  const timeElement = document.getElementById('time');  //assumes HTML element ID time 
+  const now = new Date();
+  const formattedTime = now.toLocaleTimeString();
+  const timeElement = document.getElementById('formattedTime')
+  timeElement.textContent = formattedTime;
+  document.body.appendChild(timeElement);
 
-  function formatTime() {
-    const now = new Date();
-    const hours = String(now.getHours()).padStart(2, '0');
-    const minutes = String(now.getMinutes()).padStart(2, '0');
-    const seconds = String(now.getSeconds()).padStart(2, '0');
-    const formattedTime = `${hours}:${minutes}:${seconds}`;
-    timeElement.textContent = formattedTime;
-  }
-  formatTime(); // Display the initial time
-  setInterval(formatTime, 1000); // Update time every second
+
+
+setInterval(addCurrentTime, 1000); 
 }
+
 window.addEventListener('load', addCurrentTime);
 
 
