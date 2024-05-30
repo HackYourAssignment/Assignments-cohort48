@@ -21,9 +21,6 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
-const STEP_SIZE_PX = 10;
-const STEP_TIME_MS = 50;
-const DANCE_TIME_MS = 5000;
 const STEP_SIZE_PX = 10;  // Step size in pixels
 const STEP_TIME_MS = 50;  // Step time in milliseconds
 const DANCE_TIME_MS = 5000; // Dance time in milliseconds
