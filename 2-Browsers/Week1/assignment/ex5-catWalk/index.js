@@ -29,30 +29,32 @@ const catWalk = () => {
    const cat = document.getElementById('img');
    const walkingCatUrl = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
    const dancingCatUrl = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
-   let catLeftPosition = 0;
-   const screenWidth = -cat.offsetWidth;
+   let catLeftPosition = -cat.offsetWidth;
+   const screenWidth = window.innerWidth;
    const catMiddlePosition = (screenWidth - cat.offsetWidth) / 2;
 
-   function catWalk() {
-       catLeftPosition += 10;
+   function moveCat() {
+       catLeftPosition += STEP_SIZE_PX;
        if (catLeftPosition >= screenWidth) {
            catLeftPosition = 0;
        }
 
        cat.style.left = `${catLeftPosition}px`;
 
-       if (catLeftPosition >= catMiddlePosition && catLeftPosition < catMiddlePosition + 10) {
+       if (catLeftPosition >= catMiddlePosition && catLeftPosition < catMiddlePosition + STEP_SIZE_PX) {
            clearInterval(catInterval);
            cat.src = dancingCatUrl;
            setTimeout(() => {
                cat.src = walkingCatUrl;
-               catInterval = setInterval(catWalk, 50);
-           }, 5000)
+               catInterval = setInterval(moveCat, STEP_TIME_MS);
+           }, DANCE_TIME_MS)
        }
-   }
+   };
 
 
-   let catInterval = setInterval(catWalk, 50);
+   const catInterval = setInterval(moveCat, STEP_TIME_MS);
 };
+
+window.addEventListener('load', catWalk);
 
 
