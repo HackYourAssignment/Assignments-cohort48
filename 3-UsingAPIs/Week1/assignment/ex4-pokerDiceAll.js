@@ -2,23 +2,23 @@
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/3-UsingAPIs/Week1#exercise-4-throw-the-dice-for-a-poker-dice-game
 
 For this exercise you should do the following:
-  - Refactor the `rollDice()` function to throw five dice in one go, by 
-    using `.map()` on the `dice` array to create an array of promises for use 
+  - Refactor the `rollDice()` function to throw five dice in one go, by
+    using `.map()` on the `dice` array to create an array of promises for use
     with `Promise.all()`.
-  - A successful (i.e. resolved) throw should output a message similar to: 
+  - A successful (i.e. resolved) throw should output a message similar to:
       Resolved! [ 'JACK', 'QUEEN', 'QUEEN', 'NINE', 'JACK' ]
   - An unsuccessful (i.e. rejected) throw should output a message similar to:
       Rejected! Die 3 rolled off the table.
 
-The provided rollDie() function logs the value of a die as it rolls, 
-time-stamped with the time of day (with millisecond accuracy) to the console. 
-Once you have successfully completed this exercise you will notice that the 
-intermediate messages are output in bursts of up to five at a time as the dice 
+The provided rollDie() function logs the value of a die as it rolls,
+time-stamped with the time of day (with millisecond accuracy) to the console.
+Once you have successfully completed this exercise you will notice that the
+intermediate messages are output in bursts of up to five at a time as the dice
 finish rolling asynchronously.
 
 You may also notice that, in the case of a rejected promise, dice that have not
-yet finished their roll continue to do so. 
-Can you explain why? Please add your answer as a comment to the end of the 
+yet finished their roll continue to do so.
+Can you explain why? Please add your answer as a comment to the end of the
 exercise file.
 ------------------------------------------------------------------------------*/
 
@@ -27,9 +27,11 @@ exercise file.
 const rollDie = require('../../helpers/pokerDiceRoller');
 
 function rollDice() {
-  // TODO Refactor this function
+  // Refactor this function
   const dice = [1, 2, 3, 4, 5];
-  return rollDie(1);
+  const dicePromises = dice.map(rollDie);
+
+  return Promise.all(dicePromises);
 }
 
 function main() {
