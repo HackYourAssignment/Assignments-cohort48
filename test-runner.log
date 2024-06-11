@@ -1,0 +1,138 @@
+2024-06-11 10:19:30 info: ---------------------------------------
+2024-06-11 10:19:30 info: >>> Running Unit Test `ex1-johnWho` <<<
+2024-06-11 10:19:30 info: ---------------------------------------
+2024-06-11 10:19:32 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (1 ms)
+    × should have all TODO comments removed (1 ms)
+    √ `getAnonName` should not contain unneeded console.log calls (1 ms)
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument
+    √ should resolve when called with a string argument (1 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should have all TODO comments removed
+
+    expect(received).toBeFalsy()
+
+    Received: true
+
+      103 | function testTodosRemoved(getSource) {
+      104 |   test('should have all TODO comments removed', () => {
+    > 105 |     expect(/\bTODO\b/.test(getSource())).toBeFalsy();
+          |                                          ^
+      106 |   });
+      107 | }
+      108 |
+
+      at Object.toBeFalsy (test-runner/unit-test-helpers.js:105:42)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).rejects.toBeInstanceOf(expected)
+
+    Expected constructor: Error
+
+    Received value has no prototype
+    Received value: "You didn't pass in a first name!"
+
+      90 |     timeoutSpy.mockRestore();
+      91 |     expect(promise).toBeInstanceOf(Promise);
+    > 92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+         |                                    ^
+      93 |   });
+      94 | });
+      95 |
+
+      at Object.toBeInstanceOf (node_modules/expect/build/index.js:241:22)
+      at Object.toBeInstanceOf (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:92:36)
+
+Test Suites: 1 failed, 1 total
+Tests:       2 failed, 7 passed, 9 total
+Snapshots:   0 total
+Time:        0.606 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2024-06-11 10:20:49 info: ---------------------------------------
+2024-06-11 10:20:49 info: >>> Running Unit Test `ex1-johnWho` <<<
+2024-06-11 10:20:49 info: ---------------------------------------
+2024-06-11 10:20:51 error: *** Unit Test Error Report ***
+
+Command failed: npx jest ex1-johnWho.test.js --colors
+Browserslist: caniuse-lite is outdated. Please run:
+  npx browserslist@latest --update-db
+  Why you should do it regularly: https://github.com/browserslist/browserslist#browsers-data-updating
+ FAIL  3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js
+  getAnonName
+    √ should exist and be executable (1 ms)
+    √ should have all TODO comments removed
+    √ `getAnonName` should not contain unneeded console.log calls
+    √ should call `new Promise()`
+    √ should take a single argument
+    √ `resolve()` should be called with a one argument
+    √ `reject()` should be called with a one argument
+    √ should resolve when called with a string argument (2 ms)
+    × should reject with an Error object when called without an argument (1 ms)
+
+  ● getAnonName › should reject with an Error object when called without an argument
+
+    expect(received).rejects.toBeInstanceOf(expected)
+
+    Expected constructor: Error
+
+    Received value has no prototype
+    Received value: "You didn't pass in a first name!"
+
+      90 |     timeoutSpy.mockRestore();
+      91 |     expect(promise).toBeInstanceOf(Promise);
+    > 92 |     return expect(promise).rejects.toBeInstanceOf(Error);
+         |                                    ^
+      93 |   });
+      94 | });
+      95 |
+
+      at Object.toBeInstanceOf (node_modules/expect/build/index.js:241:22)
+      at Object.toBeInstanceOf (3-UsingAPIs/Week1/unit-tests/ex1-johnWho.test.js:92:36)
+
+Test Suites: 1 failed, 1 total
+Tests:       1 failed, 8 passed, 9 total
+Snapshots:   0 total
+Time:        0.478 s, estimated 1 s
+Ran all test suites matching /ex1-johnWho.test.js/i.
+2024-06-11 10:25:23 info: ---------------------------------------
+2024-06-11 10:25:23 info: >>> Running Unit Test `ex1-johnWho` <<<
+2024-06-11 10:25:23 info: ---------------------------------------
+2024-06-11 10:25:25 info: All unit tests passed.
+2024-06-11 10:25:29 info: All steps were completed successfully
+2024-06-11 10:28:43 info: ------------------------------------------------------
+2024-06-11 10:28:43 info: >>> Running Unit Test `ex1-doubleEvenNumbers.test` <<<
+2024-06-11 10:28:43 info: ------------------------------------------------------
+2024-06-11 10:28:45 info: All unit tests passed.
+2024-06-11 10:28:49 info: All steps were completed successfully
+2024-06-11 10:29:10 info: -------------------------------------------------
+2024-06-11 10:29:10 info: >>> Running Unit Test `ex2-checkDoubleDigits` <<<
+2024-06-11 10:29:10 info: -------------------------------------------------
+2024-06-11 10:29:13 info: All unit tests passed.
+2024-06-11 10:29:16 info: All steps were completed successfully
+2024-06-11 10:29:33 info: ---------------------------------------
+2024-06-11 10:29:33 info: >>> Running Unit Test `ex3-rollDie` <<<
+2024-06-11 10:29:33 info: ---------------------------------------
+2024-06-11 10:29:35 info: All unit tests passed.
+2024-06-11 10:29:39 info: All steps were completed successfully
+2024-06-11 10:29:51 info: --------------------------------------------
+2024-06-11 10:29:51 info: >>> Running Unit Test `ex4-pokerDiceAll` <<<
+2024-06-11 10:29:51 info: --------------------------------------------
+2024-06-11 10:29:53 info: All unit tests passed.
+2024-06-11 10:29:57 info: All steps were completed successfully
+2024-06-11 10:30:25 info: ----------------------------------------------
+2024-06-11 10:30:25 info: >>> Running Unit Test `ex5-pokerDiceChain` <<<
+2024-06-11 10:30:25 info: ----------------------------------------------
+2024-06-11 10:30:28 info: All unit tests passed.
+2024-06-11 10:30:31 info: All steps were completed successfully
