@@ -48,3 +48,19 @@ if (process.env.NODE_ENV !== 'test') {
   main();
 }
 module.exports = rollDice;
+
+/*
+Explanation for why dice that have not yet finished their roll continue to do so in the case of a rejected promise:
+
+In the case of a rejected promise, the dice that have not yet finished their roll continue to do 
+so because each die roll is an independent asynchronous operation. When one of the promises is rejected, 
+it does not stop or cancel the other promises that are still pending.
+
+The `Promise.all` function waits for all promises to either resolve or reject, 
+and then resolves with an array of resolved values or rejects with the first rejection reason. However, 
+the remaining promises continue to execute in the background, even after one of them has rejected.
+
+This behavior is intentional and allows for better error handling and resource management. 
+If one of the promises fails, the application can still handle the results or errors from the other promises,
+ instead of immediately terminating all operations.
+*/
