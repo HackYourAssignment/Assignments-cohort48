@@ -11,9 +11,9 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/3-U
   explanation? Add your answer as a comment to be bottom of the file.
 ------------------------------------------------------------------------------*/
 
-// TODO Remove callback and return a promise
-function rollDie(callback) {
-  // Compute a random number of rolls (3-10) that the die MUST complete
+
+function rollDie() {
+   return new Promise((resolve, reject) => {
   const randomRollsToDo = Math.floor(Math.random() * 8) + 3;
   console.log(`Die scheduled for ${randomRollsToDo} rolls...`);
 
@@ -24,14 +24,14 @@ function rollDie(callback) {
 
     // Use callback to notify that the die rolled off the table after 6 rolls
     if (roll > 6) {
-      // TODO replace "error" callback
-      callback(new Error('Oops... Die rolled off the table.'));
+      
+      reject(new Error('Oops... Die rolled off the table.'));
     }
 
     // Use callback to communicate the final die value once finished rolling
     if (roll === randomRollsToDo) {
-      // TODO replace "success" callback
-      callback(null, value);
+      
+      resolve(null, value);
     }
 
     // Schedule the next roll todo until no more rolls to do
@@ -42,6 +42,7 @@ function rollDie(callback) {
 
   // Start the initial roll
   rollOnce(1);
+});
 }
 
 function main() {
