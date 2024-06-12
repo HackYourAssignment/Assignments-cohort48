@@ -1,0 +1,12 @@
+{
+  "name": "week1",
+  "version": "1.0.0",
+  "description": "## Deliverable Exercises",
+  "main": "index.js",
+  "scripts": {
+    "test": "jest",
+    "watch": "jest --watch *.js"
+  },
+  "author": "",
+  "license": "ISC"
+}

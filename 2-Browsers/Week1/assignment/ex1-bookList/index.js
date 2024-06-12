@@ -26,6 +26,7 @@ function createBookList(books) {
     bookInfo.textContent = `${book.title} by ${book.author}`
     const bookImage = document.createElement('img')
     bookImage.src = book.url
+    bookImage.alt = "Book Image"
     bookItem.appendChild(bookInfo)
     bookItem.appendChild(bookImage)
     booksList.appendChild(bookItem)
