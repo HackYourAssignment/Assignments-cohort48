@@ -1,3 +1,4 @@
+//2-Browsers/Week1/assignment/ex5-catWalk/index.js
 'use strict';
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-Browsers/Week1#exercise-5-the-cat-walk
@@ -21,8 +22,32 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
-function catWalk() {
-  // TODO complete this function
-}
+window.onload = () => {
+    const cat = document.querySelector('img');
+    const walkingCatUrl = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+    const dancingCatUrl = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+    let catLeftPosition = 0;
+    const screenWidth = window.innerWidth;
+    const catMiddlePosition = (screenWidth - cat.width) / 2;
 
-// TODO execute `catWalk` when the browser has completed loading the page
+    function catWalk() {
+        catLeftPosition += 10;
+        if (catLeftPosition >= screenWidth) {
+            catLeftPosition = 0;
+        }
+
+        cat.style.left = `${catLeftPosition}px`;
+
+        if (catLeftPosition >= catMiddlePosition && catLeftPosition < catMiddlePosition + 10) {
+            clearInterval(catInterval);
+            cat.src = dancingCatUrl;
+            setTimeout(() => {
+                cat.src = walkingCatUrl;
+                catInterval = setInterval(catWalk, 50);
+            }, 5000)
+        }
+    }
+
+
+    let catInterval = setInterval(catWalk, 50);
+};
