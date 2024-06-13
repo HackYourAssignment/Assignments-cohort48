@@ -12,17 +12,17 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 document.addEventListener('DOMContentLoaded' , function(){
 
   function updateProfile(){
-    const nickName = document.getElementById('nickname');
+    const nickName = document.getElementById('nick-name');
     nickName.textContent = 'Mahtab';
-    nickName.parentNode.classList.add('listItem');
+    nickName.parentNode.classList.add('list-item');
 
     const favFood = document.getElementById('fav-food');
     favFood.textContent = 'pizza';
-    favFood.parentNode.classList.add('listItem');
+    favFood.parentNode.classList.add('list-item');
 
-    const homeTown = document.getElementById('hometown');
+    const homeTown = document.getElementById('home-town');
     homeTown.textContent = 'haarlem';
-    homeTown.parentNode.classList.add('listItem');
+    homeTown.parentNode.classList.add('list-item');
   }
   updateProfile();
 })

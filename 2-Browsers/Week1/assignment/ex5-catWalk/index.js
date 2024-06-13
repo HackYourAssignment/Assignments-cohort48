@@ -23,29 +23,36 @@ cross the screen from left to right. Hurrah!
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
 const imgCat = document.querySelector('img');
-imgCat.style.left = '10px';
+imgCat.style.left = '0px';
+
+let isDancing = false;
 
 function catWalk() {
   const screenWidth = window.innerWidth;
   const catWidth = imgCat.width;
+  const middlePosition = (screenWidth - catWidth) / 2;
   let currentPosition = parseInt(imgCat.style.left);
 
-  if (currentPosition < screenWidth) {
-    // get the speed writing in the css file
-    currentPosition += 5;
+  if (!isDancing) {
+    currentPosition += 10;
     imgCat.style.left = currentPosition + 'px';
-  } else {
-    imgCat.style.left = '10px';
   }
 
-  if (currentPosition >= screenWidth / 2 - catWidth / 2) {
-    imgCat.src =
-      'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+  if (currentPosition >= screenWidth) {
+    imgCat.style.left = '0px';
+    currentPosition = 0;
+  }
+
+  if (!isDancing && currentPosition >= middlePosition && currentPosition < middlePosition + 10) {
+    isDancing = true;
+    imgCat.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
     setTimeout(() => {
       imgCat.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+      isDancing = false;
     }, 5000);
   }
 }
+
 setInterval(catWalk, 50);
 
 window.addEventListener('load', catWalk);

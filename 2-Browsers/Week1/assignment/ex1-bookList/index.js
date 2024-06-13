@@ -85,3 +85,57 @@ function main() {
 }
 
 window.addEventListener('load', main);
+// 
+function createBookList(books) {
+  const ul = document.createElement('ul');
+  ul.classList.add('book-list');
+
+  books.forEach((book) => {
+    const li = document.createElement('li');
+    li.classList.add('book-item');
+    li.classList.add(book.alreadyRead ? 'read' : 'not-read');
+
+    const p = document.createElement('p');
+    p.textContent = `${book.title} by ${book.author}`;
+    li.appendChild(p);
+
+    const formattedTitle = book.title.replace(/ /g, '_').toLowerCase();
+    const imageUrl = `./assets/${formattedTitle}.jpg`;
+
+    const img = document.createElement('img');
+    img.src = imageUrl;
+    img.alt = `Cover of ${book.title}`;
+    li.appendChild(img);
+
+    ul.appendChild(li);
+  });
+  return ul;
+}
+
+function main() {
+  const myBooks = [
+    {
+      title: 'The Design of Everyday Things',
+      author: 'Don Norman',
+      isbn: '978-0465050659',
+      alreadyRead: false,
+    },
+    {
+      title: 'The Most Human Human',
+      author: 'Brian Christian',
+      isbn: '978-1617933431',
+      alreadyRead: true,
+    },
+    {
+      title: 'The Pragmatic Programmer',
+      author: 'Andrew Hunt',
+      isbn: '978-0201616224',
+      alreadyRead: true,
+    },
+  ];
+
+  const ulElement = createBookList(myBooks);
+  document.querySelector('#bookList').appendChild(ulElement);
+}
+
+window.addEventListener('load', main);

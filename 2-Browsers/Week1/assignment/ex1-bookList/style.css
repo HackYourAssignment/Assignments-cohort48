@@ -1,1 +1,37 @@
-/* Write your style here */
+/* Write your style here */body {
+  font-family: Arial, sans-serif;
+}
+
+h1 {
+  text-align: center;
+  padding-top: 30px;
+  font-family: cursive;
+}
+
+.book-list {
+  display: flex;
+  justify-content: space-between;
+  list-style-type: none;
+  padding: 0;
+}
+
+.book-item {
+  padding: 5px;
+  margin: 5px;
+  text-align: center;
+  flex: 1;
+  max-width: 32%;
+}
+
+.book-item img {
+  max-width: 300px;
+  height: 400px;
+}
+
+.book-item.read {
+  background-color: green;
+}
+
+.book-item.not-read {
+  background-color: red;
+}
