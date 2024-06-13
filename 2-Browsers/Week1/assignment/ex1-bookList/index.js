@@ -30,7 +30,8 @@ function createBookList(books) {
     item.appendChild(titleAndAuthor);
 
     const cover = document.createElement('img');
-    cover.src = `${book.coverUrl}`;
+    cover.src = `./assets/${book.title.toLowerCase().split(' ').join('_')}.jpg`;
+
     cover.alt = `Cover of ${book.title}`;
     item.appendChild(cover);
 
@@ -47,21 +48,18 @@ function main() {
       author: 'Don Norman',
       isbn: '978-0465050659',
       alreadyRead: false,
-      coverUrl: "./assets/the_design_of_everyday_things.jpg"
     },
     {
       title: 'The Most Human Human',
       author: 'Brian Christian',
       isbn: '978-1617933431',
       alreadyRead: true,
-      coverUrl: "./assets/the_most_human_human.jpg"
     },
     {
       title: 'The Pragmatic Programmer',
       author: 'Andrew Hunt',
       isbn: '978-0201616224',
       alreadyRead: true,
-      coverUrl: "./assets/the_pragmatic_programmer.jpg"
     },
   ];
 
