@@ -8,5 +8,21 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
    `list-item`.
 3. Look in the css file!
 ------------------------------------------------------------------------------*/
+// Dom content loaded the means in javascript file can in the browser changed and access js code
+document.addEventListener('DOMContentLoaded' , function(){
 
-// TODO add your JavaScript code here.
+  function updateProfile(){
+    const nickName = document.getElementById('nick-name');
+    nickName.textContent = 'Mahtab';
+    nickName.parentNode.classList.add('list-item');
+
+    const favFood = document.getElementById('fav-food');
+    favFood.textContent = 'pizza';
+    favFood.parentNode.classList.add('list-item');
+
+    const homeTown = document.getElementById('home-town');
+    homeTown.textContent = 'haarlem';
+    homeTown.parentNode.classList.add('list-item');
+  }
+  updateProfile();
+})

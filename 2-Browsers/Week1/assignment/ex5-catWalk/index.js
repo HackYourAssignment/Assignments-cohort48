@@ -8,7 +8,8 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 3. Complete the function called catWalk() to move the cat 10 pixels to the right
    of where it started, by changing the `left` style property.
 4. Call that function every 50 milliseconds. Your cat should now be moving 
-   across the screen from left to right. Hurrah!
+   a
+cross the screen from left to right. Hurrah!
 5. When the cat reaches the right-hand of the screen, restart them at the left 
    hand side (`0px`). So they should keep walking from left to right across the 
    screen, forever and ever.
@@ -21,8 +22,37 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+const imgCat = document.querySelector('img');
+imgCat.style.left = '0px';
+
+let isDancing = false;
+
 function catWalk() {
-  // TODO complete this function
+  const screenWidth = window.innerWidth;
+  const catWidth = imgCat.width;
+  const middlePosition = (screenWidth - catWidth) / 2;
+  let currentPosition = parseInt(imgCat.style.left);
+
+  if (!isDancing) {
+    currentPosition += 10;
+    imgCat.style.left = currentPosition + 'px';
+  }
+
+  if (currentPosition >= screenWidth) {
+    imgCat.style.left = '0px';
+    currentPosition = 0;
+  }
+
+  if (!isDancing && currentPosition >= middlePosition && currentPosition < middlePosition + 10) {
+    isDancing = true;
+    imgCat.src = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+    setTimeout(() => {
+      imgCat.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+      isDancing = false;
+    }, 5000);
+  }
 }
 
-// TODO execute `catWalk` when the browser has completed loading the page
+setInterval(catWalk, 50);
+
+window.addEventListener('load', catWalk);
