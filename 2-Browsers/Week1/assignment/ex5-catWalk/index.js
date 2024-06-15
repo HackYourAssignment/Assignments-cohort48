@@ -21,8 +21,39 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
+
+let img = document.querySelector('img');
+img.style.left = '0px';
+let walkInterval;
+let isDancing = false;
+
 function catWalk() {
-  // TODO complete this function
+  let currentLeft = parseInt(img.style.left);
+  let windowWidth = window.innerWidth;
+  let imgWidth = img.width;
+
+  if (currentLeft + imgWidth >= windowWidth) {
+    img.style.left = '-100px'; // Start from left again when it reaches the end
+  } else {
+    img.style.left = currentLeft + 10 + 'px';
+  }
+
+  // Check if the cat is at the middle of the screen
+  let middle = (windowWidth - imgWidth) / 2;
+  if (!isDancing && currentLeft >= middle - 10 && currentLeft <= middle + 10) {
+    isDancing = true;
+    clearInterval(walkInterval);
+    img.src =
+      'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+      img.alt = 'Cat Dancing'
+
+    setTimeout(() => {
+      img.src = 'http://www.anniemation.com/clip_art/images/cat-walk.gif';
+      img.alt = 'Cat walking';
+      isDancing = false;
+      walkInterval = setInterval(catWalk, 50);
+    }, 5000); // Dance for 5 seconds
+  }
 }
 
-// TODO execute `catWalk` when the browser has completed loading the page
+walkInterval = setInterval(catWalk, 50);
