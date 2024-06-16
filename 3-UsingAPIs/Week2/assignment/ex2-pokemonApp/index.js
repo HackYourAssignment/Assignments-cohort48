@@ -68,17 +68,27 @@ async function fetchImage(url) {
     console.error('Error fetching and populating image:', error);
   }
 }
-
 async function main() {
   const url = 'https://pokeapi.co/api/v2/pokemon?limit=151';
   await fetchAndPopulatePokemons(url);
-
   const selectElement = document.getElementById('pokemon-select');
+  
+  const container = document.createElement('div');
+  container.classList.add('container');
+  document.body.appendChild(container);
+  
   const btn = document.createElement('button');
   btn.id = 'get-pokemon';
   btn.classList.add('pokemon-button');
   btn.textContent = 'Catch Pokemon!';
-  document.body.appendChild(btn);
+  btn.type = 'submit';
+  container.appendChild(btn);
+  
+  const list = document.createElement('ul');
+  list.id = 'pokemon-list';
+  list.classList.add('pokemon-list');
+  container.appendChild(list);
+  
   btn.addEventListener('click', async () => {
     const selectedPokemon = selectElement.value;
     const pokemonUrl = `https://pokeapi.co/api/v2/pokemon/${selectedPokemon}`;
