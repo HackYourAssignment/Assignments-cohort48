@@ -1,1 +1,34 @@
-/* add your styling here */
+body {
+    background-color: rgb(213, 250, 250);
+    display: flex;
+    flex-direction: column;
+    justify-content: center; 
+    align-items: center; 
+    
+}
+ 
+button {
+    width: 150px;
+    margin-bottom: 10px;
+    background-color: #c0c2c2;
+    color: black;
+    font-weight: bold;
+    padding: 5px 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+select {
+    width: 150px;
+    margin-bottom: 10px;
+    padding: 5px;
+    border-radius: 5px;
+    background-color: #c0c2c2;
+}
+
+img {
+    width: 150px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+}
