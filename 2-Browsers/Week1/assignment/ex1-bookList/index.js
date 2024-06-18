@@ -18,33 +18,50 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 //cspell: enable
 
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
+   
+  const ul=document.createElement('ul')
+
+  books.forEach(book=>{
+      const background=book.alreadyRead?'green':'red'
+      const li=document.createElement('li')
+li.style.background=background
+li.innerHTML=
+`<p>${book.title} by ${book.author}</p>
+<img src="${book.isbn}"alt=""></li>`
+ul.appendChild(li)
+})
+return ul  
 }
+
+
+
 
 function main() {
   const myBooks = [
     {
       title: 'The Design of Everyday Things',
       author: 'Don Norman',
-      isbn: '978-0465050659',
+      isbn: 'https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/assets/the_most_human_human.jpg',
       alreadyRead: false,
     },
     {
       title: 'The Most Human Human',
       author: 'Brian Christian',
-      isbn: '978-1617933431',
+      isbn: 'https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/assets/the_design_of_everyday_things.jpg',
       alreadyRead: true,
     },
     {
       title: 'The Pragmatic Programmer',
       author: 'Andrew Hunt',
-      isbn: '978-0201616224',
+      isbn: 'https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/assets/the_pragmatic_programmer.jpg',
       alreadyRead: true,
     },
   ];
 
   const ulElement = createBookList(myBooks);
   document.querySelector('#bookList').appendChild(ulElement);
+
 }
+
 
 window.addEventListener('load', main);

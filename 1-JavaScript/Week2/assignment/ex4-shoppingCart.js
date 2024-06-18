@@ -9,7 +9,7 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 1. Create an array called `shoppingCart` that holds the following strings: 
    "bananas" and "milk".
 
-2. Complete the function named `addToShoppingCart` as follows:
+2 . Complete the function named `addToShoppingCart` as follows:
 
    - It should take one argument: a grocery item (string)
    - It should add the grocery item to `shoppingCart`. If the number of items is
@@ -23,8 +23,13 @@ you have more than 3 items in your shopping cart the first item gets taken out.
 const shoppingCart = ['bananas', 'milk'];
 
 // ! Function to be tested
-function addToShoppingCart(/* parameters go here */) {
-  // TODO complete this function
+function addToShoppingCart(groceryitem) {
+  const updateCart=[...shoppingCart,groceryitem]
+
+ if(updateCart.length>3){
+  updateCart.shift()
+ }
+ return `You bought ${updateCart.join(', ')}!`
 }
 
 // ! Test functions (plain vanilla JavaScript)
