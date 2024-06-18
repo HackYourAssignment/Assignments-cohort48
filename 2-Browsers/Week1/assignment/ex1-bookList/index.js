@@ -18,7 +18,30 @@ https://hackyourfuture.github.io/example-pages/Browsers/Week1/1-booklist/
 //cspell: enable
 
 function createBookList(books) {
-  // TODO your code goes in here, return the ul element
+  const ul = document.createElement('ul');
+
+  books.forEach((book) => {
+    const li = document.createElement('li');
+
+    const p = document.createElement('p');
+    p.textContent = `${book.title} by ${book.author}`;
+    li.appendChild(p);
+
+    const img = document.createElement('img');
+    const imgSrc = book.title.toLowerCase().split(' ').join('_') + '.jpg';
+    img.src = `./assets/${imgSrc}`;
+    li.appendChild(img);
+
+    if (book.alreadyRead) {
+      li.style.color = 'green';
+    } else {
+      li.style.color = 'red';
+    }
+
+    ul.appendChild(li);
+  });
+
+  return ul;
 }
 
 function main() {

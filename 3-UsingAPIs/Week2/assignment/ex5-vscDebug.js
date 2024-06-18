@@ -3,11 +3,14 @@
 Full description at: https://github.com/HackYourFuture/Assignments/blob/main/3-UsingAPIs/Week2/README.md#exercise-5-using-the-vscode-debugger
 
 Use the VSCode Debugger to fix the bugs
---------------------------------------------------------------- --------------*/
+------------------------------------------------------------------------------*/
 const fetch = require('node-fetch');
 
 async function getData(url) {
   const response = await fetch(url);
+  if (!response.ok) {
+    throw new Error('Network response was not ok');
+  }
   return response.json();
 }
 
@@ -23,10 +26,10 @@ function renderLaureates(laureates) {
 
 async function fetchAndRender() {
   try {
-    const laureates = getData(
-      'http://api.nobelprize.org/2.0/laureates?birthCountry=Netherlands&format=json&csvLang=en'
+    const data = await getData(
+      'https://api.nobelprize.org/2.0/laureates?birthCountry=Netherlands&format=json&csvLang=en'
     );
-    renderLaureates(laureates);
+    renderLaureates(data.laureates);
   } catch (err) {
     console.error(`Something went wrong: ${err.message}`);
   }

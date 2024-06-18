@@ -7,8 +7,13 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 2. Modify the `src` and `srcset` of the logo so that it's replaced by the 
    HackYourFuture logo instead.
 ------------------------------------------------------------------------------*/
+
 function hijackGoogleLogo() {
-  // TODO your code goes in here
+  const googleLogo = document.querySelector('img[alt="Google"]');
+  if (googleLogo) {
+    googleLogo.setAttribute('src', 'https://www.hackyourfuture.dk/static/logo-dark.svg');
+    googleLogo.setAttribute('srcset', 'https://www.hackyourfuture.dk/static/logo-dark.svg');
+  }
 }
 
 hijackGoogleLogo();
