@@ -22,18 +22,87 @@ Use async/await and try/catch to handle promises.
 Try and avoid using global variables. As much as possible, try and use function 
 parameters and return values to pass data back and forth.
 ------------------------------------------------------------------------------*/
-function fetchData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+function fetchData(url) {
+  return fetch(url)
+      .then(response => {
+          if (!response.ok) {
+              throw new Error('Error in network response');
+          }
+          return response.json();
+      })
+      .catch(error => {
+              console.error(`Fetch error: ${error.message}`);
+              // return null;
+          }
+      )
 }
 
-function fetchAndPopulatePokemons(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchAndPopulatePokemons() {
+    const url = `https://pokeapi.co/api/v2/pokemon?limit=151`;
+      try {
+          const data = await fetchData(url);
+
+          if (data) {
+              const selectElement = document.createElement('select');
+              selectElement.id = 'pokemon-selector';
+
+
+              data.results.forEach(pokemon => {
+                  const option = document.createElement('option');
+                  option.value = pokemon.url;
+                  option.textContent = pokemon.name;
+                  selectElement.appendChild(option);
+              });
+
+              selectElement.addEventListener('change', event => {
+                  const url = event.target.value;
+                  fetchImage(url);
+              });
+
+              const selectorContainerElement = document.getElementById('selector-container');
+              selectorContainerElement.appendChild(selectElement);
+          }
+      } catch (error) {
+          console.error(`Error populating the list with pokemons: ${error.message}`);
+      }
 }
 
-function fetchImage(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchImage(url) {
+    try {
+        const data = await fetchData(url);
+        if (data) {
+            //console.log(`Creating the img element`);
+            let imgElement = document.querySelector('img');
+            if (!imgElement) {
+                imgElement = document.createElement('img');
+                document.body.appendChild(imgElement);
+                //console.log(`Appended img to body`)
+            }
+            //console.log(data);
+            imgElement.src = data.sprites.back_default;
+
+        }
+    } catch (error) {
+        console.error(`Error fetching image: ${error.message}`);
+    }
 }
 
-function main() {
-  // TODO complete this function
+async function main() {
+    const getPokemonBtn = document.createElement('button');
+    getPokemonBtn.id = 'get-pokemon-btn';
+    getPokemonBtn.textContent = 'Get Pokemon!';
+    document.body.appendChild(getPokemonBtn);
+
+    const selectorContainer = document.createElement('div');
+    selectorContainer.id = 'selector-container';
+    selectorContainer.style.display = 'none';
+    document.body.appendChild(selectorContainer);
+
+    getPokemonBtn.addEventListener('click', async () => {
+        selectorContainer.style.display = 'block';
+        await fetchAndPopulatePokemons();
+    })
 }
+
+main();
+

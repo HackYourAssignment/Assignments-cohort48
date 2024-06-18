@@ -18,28 +18,45 @@ Full description at: https://github.com/HackYourFuture/Assignments/blob/main/3-U
    should result in a network (DNS) error.
 ------------------------------------------------------------------------------*/
 function requestData(url) {
-  // TODO return a promise using `fetch()`
+  console.log('Fetching data from URL:', url);
+  return fetch(url)
+      .then(response => {
+        if (!response.ok) {
+          throw new Error('Error in network response');
+        }
+        return response.json();
+      })
+      .catch(error => {
+        throw new Error(`Fetch error: ${error.message}`);
+      });
 }
 
 function renderImage(data) {
-  // TODO render the image to the DOM
-  console.log(data);
+  console.log('Rendering image with data:', data);
+  const img = document.createElement('img');
+  img.src = data.img;
+  img.alt = data.alt;
+  document.body.appendChild(img);
 }
 
 function renderError(error) {
-  // TODO render the error to the DOM
-  console.log(error);
+  console.error('Rendering error:', error);
+  const h1 = document.createElement('h1');
+  h1.textContent = error.message;
+  document.body.appendChild(h1);
 }
 
-// TODO refactor with async/await and try/catch
-function main() {
-  requestData('https://xkcd.now.sh/?comic=latest')
-    .then((data) => {
-      renderImage(data);
-    })
-    .catch((error) => {
+
+async function main() {
+  const url = 'https://xkcd.now.sh/?comic=latest';
+  console.log('Calling requestData()')
+  try {
+    const data = await requestData(url);
+    console.log('Fetched data:', data);
+    renderImage(data);
+  } catch (error) {
       renderError(error);
-    });
+  }
 }
 
 window.addEventListener('load', main);
