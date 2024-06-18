@@ -5,19 +5,11 @@ Full description at:https://github.com/HackYourFuture/Assignments/blob/main/3-Us
 'use strict';
 
 async function getData(url) {
-  try {
-    const response = await fetch(url);
-    if (response.ok) {
-      const data = await response.json();
-      console.log('Data fetched successfully:', data);
-      return data;
-    }
+  const response = await fetch(url);
+  if (!response.ok) {
     throw new Error(`HTTP error! status: ${response.status}`);
-  } 
-  catch (error) {
-    console.error('Fetch error:', error);
-    throw error;
-  } 
+  }
+  return response.json();
 }
 
 function createAndAppend(name, parent, options = {}) {
@@ -43,8 +35,10 @@ function renderLaureate(ul, { knownName, birth, death }) {
   const li = createAndAppend('li', ul);
   const table = createAndAppend('table', li);
   addTableRow(table, 'Name', knownName?.en);
-  addTableRow(table, 'Birth', `${birth?.date}, ${birth?.place?.locationString}`);
-  addTableRow(table, 'Death', `${death?.date}, ${death?.place?.locationString}`);
+  addTableRow(table, 'Birth', `${birth?.date || 'N/A'}, ${birth?.place?.locationString || 'N/A'}`);
+  if (death && death.date) {
+    addTableRow(table, 'Death', `${death.date}, ${death?.place?.locationString || 'N/A'}`);
+  }
 }
 
 function renderLaureates(laureates) {
@@ -63,3 +57,4 @@ async function fetchAndRender() {
 }
 
 window.addEventListener('load', fetchAndRender);
+
