@@ -22,18 +22,66 @@ Use async/await and try/catch to handle promises.
 Try and avoid using global variables. As much as possible, try and use function 
 parameters and return values to pass data back and forth.
 ------------------------------------------------------------------------------*/
-function fetchData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+
+
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('Network response was not ok ' + response.statusText);
+    }
+    return await response.json() ;
+    
+
+  } catch (error) {
+    console.error('There was a problem with the fetch operation:', error);
+  }
 }
 
-function fetchAndPopulatePokemons(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchAndPopulatePokemons(url) {
+  try {
+    const data = await fetchData(url);
+    console.log(data)
+    const pokemons = data.results;
+    const selectElement = document.createElement('select');
+    document.body.appendChild(selectElement);
+    
+    pokemons.forEach(pokemon => {
+      const option = document.createElement('option');
+      option.value = pokemon.url; 
+      option.textContent = pokemon.name;
+      selectElement.appendChild(option);
+    });
+
+    selectElement.addEventListener('change', (event) => {
+      fetchImage(event.target.value);
+    });
+
+  } catch (error) {
+    console.error('Error fetching and populating Pokémon:', error);
+  }
 }
 
-function fetchImage(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchImage(url) {
+  try {
+    const pokemonData = await fetchData(url);
+    const imageUrl = pokemonData.sprites.front_default; 
+
+    let image = document.getElementById('pokemon-image');
+    if (!image) {
+      image = document.createElement('img');
+      image.id = 'pokemon-image';
+      document.body.appendChild(image);
+    }
+    image.src = imageUrl;
+
+  } catch (error) {
+    console.error('Error fetching image:', error);
+  }
 }
 
 function main() {
-  // TODO complete this function
+  fetchAndPopulatePokemons('https://pokeapi.co/api/v2/pokemon?limit=151');
 }
+
+window.addEventListener('load', main);
