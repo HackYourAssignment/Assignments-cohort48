@@ -10,3 +10,12 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 ------------------------------------------------------------------------------*/
 
 // TODO add your JavaScript code here.
+const li=document.querySelectorAll('ul li ')
+const name=document.getElementById('nickname').replaceWith('Elmaghraby')
+const food=document.getElementById('fav-food').replaceWith('Pasta')
+const hometown=document.getElementById('hometown').replaceWith('emmen')
+
+li.forEach(e=>{
+    e.classList.add('list-item')
+})
+
