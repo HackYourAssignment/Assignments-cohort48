@@ -1,12 +1,25 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Pokemon App</title>
-    <link rel="stylesheet" href="style.css" />
-  </head>
-  <body>
-    <script src="index.js"></script>
-  </body>
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Pokemon App</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+  <div class="container">
+    <h1>Pokemon Selector</h1>
+    <button id="get-pokemon">Get Pokemon!</button>
+    <button id="reset" style="display: none;">Reset</button>
+    <select id="pokemon-select" style="display: none;">
+      <option value="">Select a Pokemon</option>
+    </select>
+    <br>
+    <img id="pokemon-image" alt="">
+  </div>
+  <script src="./index.js"></script>
+</body>
+
 </html>
