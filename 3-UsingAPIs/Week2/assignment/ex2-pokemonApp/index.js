@@ -22,18 +22,54 @@ Use async/await and try/catch to handle promises.
 Try and avoid using global variables. As much as possible, try and use function 
 parameters and return values to pass data back and forth.
 ------------------------------------------------------------------------------*/
-function fetchData(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchData(url) {
+  try {
+    const response = await fetch(url);
+    if (!response.ok) {
+      throw new Error('HTTP error! status: ${response.status}');
+    }
+    const data = await response.json();
+    return data;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
-function fetchAndPopulatePokemons(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchAndPopulatePokemons(selectElementId) {
+  const url = 'https://pokeapi.co/api/v2/pokemon?limit=151';
+  const data = await fetchData(url);
+  const selectElement = document.getElementById(selectElementId);
+  data.results.forEach((pokemon) => {
+    const option = document.createElement('option');
+    option.value = pokemon.url;
+    option.text = pokemon.name;
+    selectElement.appendChild(option);
+  });
 }
 
-function fetchImage(/* TODO parameter(s) go here */) {
-  // TODO complete this function
+async function fetchImage(imageElementId, pokemonUrl) {
+  try {
+    const data = await fetchData(pokemonUrl);
+    const imageUrl = data.sprites.front_default || 'placeholder-image-url';
+    const imageElement = document.getElementById(imageElementId);
+    imageElement.src = imageUrl;
+  } catch (error) {
+    console.log(error);
+  }
 }
 
 function main() {
-  // TODO complete this function
+  const selectElementId = 'pokemon-select';
+  const imageElementId = 'pokemon-image';
+
+  fetchAndPopulatePokemons(selectElementId);
+
+  const selectElement = document.getElementById(selectElementId);
+  selectElement.addEventListener('change', (event) => {
+    const pokemonUrl = event.target.value;
+    console.log(pokemonUrl);
+    console.log(event.target.selectedOptions[0]);
+    fetchImage(imageElementId, pokemonUrl);
+  });
 }
+window.addEventListener('load', main);
