@@ -27,9 +27,19 @@ exercise file.
 const rollDie = require('../../helpers/pokerDiceRoller');
 
 function rollDice() {
-  // TODO Refactor this function
+  // Refactor this function to roll five dice at once
   const dice = [1, 2, 3, 4, 5];
-  return rollDie(1);
+  const dicePromises = dice.map(rollDie);
+  
+  return Promise.all(dicePromises)
+    .then(results => {
+      console.log('Resolved!', results);
+      return results;
+    })
+    .catch(error => {
+      console.log('Rejected!', error.message);
+      throw error;
+    });
 }
 
 function main() {
@@ -43,3 +53,9 @@ if (process.env.NODE_ENV !== 'test') {
   main();
 }
 module.exports = rollDice;
+
+/*
+Explanation:
+
+In the case of a rejected promise, dice that have not yet finished their roll continue to do so because the rollDie() function is asynchronous and the dice roll independently of each other. When Promise.all() is used, it waits for all promises to settle (either resolve or reject), but the asynchronous operations (rolling dice) continue to run to completion. Therefore, even if one die rolls off the table and causes the Promise.all() to reject, the other dice will continue their rolling process and log their results as they finish.
+*/
