@@ -5,6 +5,7 @@ const {
   beforeAllHelper,
   testTodosRemoved,
 } = require('../../../test-runner/unit-test-helpers');
+const { clear } = require('winston');
 
 describe('pokemonApp', () => {
   const state = {};
@@ -53,3 +54,4 @@ describe('pokemonApp', () => {
     expect(state.tryCatch).toBeDefined();
   });
 });
+clear;
