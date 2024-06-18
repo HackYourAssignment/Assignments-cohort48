@@ -32,8 +32,15 @@ function rollDice() {
   const promises = dice.map(rollDie)
 
   return Promise.all(promises)
-  .then((results) => console.log('Resolved!', results))
-  .catch((error) => console.log('Rejected!', error.message));
+  
+  .then((results) => {
+    console.log('Resolved!', results);
+    return results;
+  })
+  .catch((error) => {
+    console.log('Rejected!', error.message);
+    throw error;
+  });
 
 }
 
