@@ -49,19 +49,12 @@ function rollDie() {
 }
 
 function main() {
-  // TODO Refactor to use promise
+  // Refactor to use promise
   rollDie().then((value)=>{
     console.log(`Success! Die settled on ${value}.`);
   }).catch((error)=>{
     console.log(error.message);
   })
-  // rollDie((error, value) => {
-  //   if (error !== null) {
-  //     console.log(error.message);
-  //   } else {
-  //     console.log(`Success! Die settled on ${value}.`);
-  //   }
-  // });
 }
 
 // ! Do not change or remove the code below
