@@ -27,21 +27,15 @@ exercise file.
 const rollDie = require('../../helpers/pokerDiceRoller');
 
 function rollDice() {
-  
   const dice = [1, 2, 3, 4, 5];
-  const promises = dice.map(rollDie)
+  const promises = dice.map(rollDie);
 
   return Promise.all(promises)
-  
-  .then((results) => {
-    console.log('Resolved!', results);
-    return results;
-  })
-  .catch((error) => {
-    console.log('Rejected!', error.message);
-    throw error;
-  });
 
+    .then((results) => results)
+    .catch((error) => {
+      throw error;
+    });
 }
 
 function main() {
