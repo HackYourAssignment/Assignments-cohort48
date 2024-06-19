@@ -42,9 +42,6 @@ function rollDice() {
       console.log(`Die 5 rolled: ${value}`);
       results.push(value);
       return results;
-    })
-    .catch((error) => {
-      console.log(`Error: ${error.message}`);
     });
 }
 
