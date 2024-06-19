@@ -17,32 +17,35 @@ const rollDie = require('../../helpers/pokerDiceRoller');
 function rollDice() {
   const results = [];
 
-  
   return rollDie(1)
     .then((value) => {
+      console.log(`Die 1 rolled: ${value}`);
       results.push(value);
       return rollDie(2);
     })
     .then((value) => {
+      console.log(`Die 2 rolled: ${value}`);
       results.push(value);
       return rollDie(3);
     })
     .then((value) => {
+      console.log(`Die 3 rolled: ${value}`);
       results.push(value);
       return rollDie(4);
     })
     .then((value) => {
+      console.log(`Die 4 rolled: ${value}`);
       results.push(value);
       return rollDie(5);
     })
     .then((value) => {
+      console.log(`Die 5 rolled: ${value}`);
       results.push(value);
       return results;
     })
     .catch((error) => {
-      console.log(error.message);
-    }); 
-    
+      console.log(`Error: ${error.message}`);
+    });
 }
 
 function main() {
