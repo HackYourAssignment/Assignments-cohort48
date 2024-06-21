@@ -1,7 +1,7 @@
 /*------------------------------------------------------------------------------
 Full description at: https://github.com/HackYourFuture/Assignments/tree/main/1-JavaScript/Week4#exercise-1-the-odd-ones-out
 
-The `doubleEvenNumbers` function returns only the even numbers in the array 
+The `doubleEvenNumbers` function returns only the even numbers in the array
 passed as the `numbers` parameter and doubles them.
 
 Let's rewrite it (or _refactor_ it, as experienced developers would call it):
@@ -11,14 +11,7 @@ Let's rewrite it (or _refactor_ it, as experienced developers would call it):
 ------------------------------------------------------------------------------*/
 // ! Function to be tested
 function doubleEvenNumbers(numbers) {
-  // TODO rewrite the function body using `map` and `filter`.
-  const newNumbers = [];
-  for (let i = 0; i < numbers.length; i++) {
-    if (numbers[i] % 2 === 0) {
-      newNumbers.push(numbers[i] * 2);
-    }
-  }
-  return newNumbers;
+  return numbers.filter(num => num % 2 === 0).map(num => num * 2);
 }
 
 // ! Unit test (using Jest)
