@@ -21,8 +21,32 @@ Full description at: https://github.com/HackYourFuture/Assignments/tree/main/2-B
 
    https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif
 -----------------------------------------------------------------------------*/
-function catWalk() {
-  // TODO complete this function
-}
 
-// TODO execute `catWalk` when the browser has completed loading the page
+const catImage = document.querySelector('img')
+catImage.style.left = '0px'
+function catWalk() {
+  const dancingCatImageUrl = 'https://media1.tenor.com/images/2de63e950fb254920054f9bd081e8157/tenor.gif';
+  const walkingCatImageUrl = "http://www.anniemation.com/clip_art/images/cat-walk.gif"
+  const screenWidth = window.innerWidth
+  const middle = screenWidth / 2
+  let currentPosition = parseInt(catImage.style.left)
+  let newPosition = currentPosition + 10
+  if (newPosition >= middle - catImage.offsetWidth/2  && newPosition <= (middle - catImage.offsetWidth/2) + 9) {
+   catImage.src = dancingCatImageUrl;
+   clearInterval(catWalkInterval)
+   setTimeout(() => {
+    catImage.src = walkingCatImageUrl
+    catWalkInterval = setInterval(catWalk, 50)
+    console.log('newPosition', newPosition)
+      console.log('middle', middle)
+      console.log('catImage.offsetWidth', catImage.offsetWidth)
+   }, 5000)
+   } 
+   catImage.style.left = `${newPosition}px`
+   if(newPosition + catImage.offsetWidth >= screenWidth){
+   catImage.style.left = '0px'
+   }
+}
+let catWalkInterval = setInterval(catWalk, 50)
+
+window.addEventListener('load', catWalk)
